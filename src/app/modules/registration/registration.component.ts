@@ -1,5 +1,5 @@
 import { RegistrationService } from './../../Services/registration.service';
-import { Reg } from './../../Models/Registration';
+import { Registration } from './../../Models/Registration';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
@@ -20,8 +20,8 @@ export class RegistrationComponent implements OnInit {
     password: new FormControl('',Validators.required),
     dob: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
-    usertype: new FormControl('',Validators.required),
-    region: new FormControl('',Validators.required)
+    usertype: new FormControl('',Validators.required)
+    //region: new FormControl('',Validators.required)
   })
 
   //Region = ['North','East','West','South'];
@@ -33,13 +33,13 @@ export class RegistrationComponent implements OnInit {
   //   { name: 'Apple', value: 'apple' }
   // ];  
 
-  Reg: Reg = new Reg ();
+  Reg: Registration = new Registration ();
   message:any;  
 
   constructor(private fb: FormBuilder,private http: HttpClient,private registrationService: RegistrationService,private toastr: ToastrService,public router: Router) {
-    this.form = this.fb.group({
-      checkArray: this.fb.array([])
-    })
+    // this.form = this.fb.group({
+    //   checkArray: this.fb.array([])
+    // })
    }
 
   ngOnInit(): void {
@@ -73,21 +73,19 @@ export class RegistrationComponent implements OnInit {
     if (index == -1){
       this.selectedRegions.push(event.target.value);
     }else{
-      this.selectedRegions.splice(index,1) 
+      this.selectedRegions.splice(index,1);
     }
-    console.log(this.selectedRegions)
+    console.log(this.selectedRegions);
   }
 
-  
+
   public registerNow(){
     {
-  
+      this.Reg.region = this.selectedRegions.toString();
       let resp=this.registrationService.Registration(this.Reg);resp.subscribe((data)=>{this.message=(data)
-      
         if(this.message == 1)
       {
-        this.Reg.region = this.selectedRegions.tostring();
-        this.gotoLogin()
+        this.gotoLogin();
         this.toastr.success("Your record added Sucessfully!");
       }
       else if(this.message == -1)

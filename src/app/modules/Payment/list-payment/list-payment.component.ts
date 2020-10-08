@@ -7,6 +7,7 @@ import { Pay } from '../../../Models/Payment';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 //import { Title } from "@angular/platform-browser";
+import * as moment from 'moment';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 
@@ -47,7 +48,14 @@ export class ListPaymentComponent implements OnInit {
         columns: [
           { data: 'paymentNo'},
           { data: 'invoiceNo'},
-          { data: 'paymentDate' },
+          { data: 'paymentDate',
+          render: function(data, type, row){
+                if(type === "sort" || type === "type"){
+                  return data;
+                }
+              return moment(data).format("MMM-DD-YYYY");
+            }
+          },
           { data: 'paymentAmount', render: $.fn.dataTable.render.number(',', '.', 2, '$'), className: "dt-right"},
           {
             data: null,

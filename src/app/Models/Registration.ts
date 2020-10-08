@@ -1,4 +1,4 @@
-export class Reg{
+export class Registration{
     userId:number;
     firstName:string;
     lastName:string;

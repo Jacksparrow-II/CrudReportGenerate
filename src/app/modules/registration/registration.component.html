@@ -14,7 +14,7 @@
                             <div class="login-form">
                                 <h4>Registration</h4>
                                 <form [formGroup]="form">
-                                                                        
+                                                                            
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input type="firstName" id="firstName" name="firstName"  class="form-control" placeholder="firstName" formControlName="firstName" [(ngModel)]="Reg.firstName" [ngClass]="{'is-invalid':
@@ -82,10 +82,10 @@
                                               </div>
                                               Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                                           </div>
-                                      </div>
+                                    </div>
 
-                                      <div></div>
-                                      
+
+                                    <div>
                                       <label>usertype</label>
                                       <select class="browser-default custom-select mb-4" name="usertype" [(ngModel)]="Reg.usertype" formControlName="usertype" [ngClass]="{'is-invalid':
                                       form.get('usertype').touched && form.get('usertype').invalid}">
@@ -95,8 +95,16 @@
                                       <option value="audi">Commercial</option>
                                       <option value="audi">Business</option>
                                       </select>
+                                    </div>
 
-
+                                    <div class="form-group">
+                                        <label>Region</label>
+                                        <div *ngFor="let Reg1 of Regions">                                        
+                                            <input type="checkbox"  value="{{Reg1.key}}" (change)= "onCheckboxChange($event)" />
+                                            {{Reg1.value}}
+                                        </div>
+                                    </div>
+                                    
                                     <!-- <div class="form-group" *ngFor="let Reg of Regions; let i=index">
                                         <label>region</label>
                                         <input type="checkbox" id="region" name="region" value="{{Reg.key}}" (change)= onCheckboxChange($event) class="form-control" placeholder="region" formControlName="region" [(ngModel)]="Reg.region" [ngClass]="{'is-invalid':
@@ -107,12 +115,8 @@
                                         </div>
                                     </div> -->
 
-                                    <div *ngFor="let Reg of Regions">
-                                          <input type="checkbox"  value="{{Reg.key}}"/>
-                                          {{Reg.value}}  
-                                    </div>
 
-                                    <div class="checkbox">
+                                    <div class="form-group">
                                         <label>
         										<!-- <input type="checkbox"> Remember Me -->
                                         </label>
