@@ -78,6 +78,7 @@ export class RegistrationComponent implements OnInit {
     console.log(this.selectedRegions)
   }
 
+  
   public registerNow(){
     {
   
