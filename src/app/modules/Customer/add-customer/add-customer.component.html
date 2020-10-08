@@ -1,1 +1,108 @@
-<p>add-customer works!</p>
+    <!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
+
+        <p class="h4 mb-4">Enter details to Add Customer </p>
+    
+        <label>Customer No</label>
+        <input type="text" id="CustomerNo" [(ngModel)]="Cust.customerNo" name="customerNo"  class="form-control mb-4" placeholder="Number" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
+        <div class="invalid-feedback">
+            <div>Input is required </div>
+        </div>
+
+        <label>Customer Name</label>
+        <input type="text" id="CustomerName" [(ngModel)]="Cust.customerName" name="customerName"  class="form-control mb-4" placeholder="Name" formControlName="customerName" [ngClass]="{'is-invalid':form.get('customerName').touched && form.get('customerName').invalid}" >
+        <div class="invalid-feedback">
+            <div>Input is required </div>
+        </div>
+    
+        <div class="text-center">
+            <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="registerNow()" type="submit" >Submit</button>
+            <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListCustomer">Go to List</button>
+        </div>
+            <router-outlet></router-outlet>
+    </form> -->
+
+
+<div class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Customer</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Add Customer</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+
+                <!-- Row -->
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="card card-outline-info">
+                            <div class="card-header">
+                                <h3 class="m-b-0 text-white">Enter details of customer </h3>
+                            </div>
+                            <div class="card-body m-t-15">
+                                <form  class="form-horizontal form-bordered" [formGroup]="form">
+                                    <div class="form-body">
+                                        <div class="form-group row">
+                                            <label class="control-label text-right col-md-2">Customer No</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="CustomerNo" [(ngModel)]="Cust.customerNo" name="customerNo" placeholder="Customer Number" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
+                                                <div class="invalid-feedback">
+                                                    <div>Input is required </div>
+                                                </div>
+                                                <!-- <small class="form-control-feedback">Example : CT00001</small>  -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label text-right col-md-2">Customer Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="CustomerName" [(ngModel)]="Cust.customerName" name="customerName" placeholder="Name" formControlName="customerName" [ngClass]="{'is-invalid':form.get('customerName').touched && form.get('customerName').invalid}" >
+                                                <div class="invalid-feedback">
+                                                    <div>Input is required </div>
+                                                </div>
+                                                <!-- <small class="form-control-feedback"> Example : Nisarg prajapati </small>  -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="offset-sm-3 col-md-9">
+                                                        <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="registerNow()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
+                                                        <button type="button" class="btn-rounded btn-inverse" (click)="ClearData()" >Clear</button>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class=" btn-rounded btn-warning" style=" text-align: center; float:right;"  routerLink = "/Navbar/ListCustomer"  > <i class="fa fa-check"></i> Back to List</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"> © 2018 All rights reserved. Made by Nisarg Prajapati <a href="https://github.com/Jacksparrow-II">Jacksparrow-II</a></footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <router-outlet></router-outlet>
+</div>

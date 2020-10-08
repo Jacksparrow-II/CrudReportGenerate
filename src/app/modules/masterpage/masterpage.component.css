@@ -1,0 +1,22 @@
+h1 {
+    position: relative;
+    animation: h1 5s ;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes h1 {
+    from {left: 1000px;}
+    to {left: 0px;}
+  }
+
+  h2 {
+    position: relative;
+    animation: h2 5s ;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes h2 {
+    from {right: 1000px;}
+    to {right: 0px;}
+  }
+

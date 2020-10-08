@@ -1,4 +1,11 @@
+import { InvoiceService } from './../../../Services/invoice.service';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http"; 
+import { CrudReportService } from '../../../Services/crud-report.service'; 
+import { Router, ActivatedRoute } from '@angular/router';
+import { Inv } from '../../../Models/Invoice';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-invoice',
@@ -7,9 +14,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddInvoiceComponent implements OnInit {
 
-  constructor() { }
+  form = new FormGroup({
+    invoiceNo: new FormControl('',Validators.required),
+    customerNo: new FormControl('',Validators.required),
+    invoiceDate: new FormControl('',Validators.required),
+    invoiceAmount: new FormControl('',Validators.required)
+    // paymentDueDate: new FormControl('',Validators.required)
+  })
+
+  Inv: Inv = new Inv ();
+  message:any;   
+
+  constructor(private http: HttpClient,private invoiceService: InvoiceService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  public registerNow(){
+    {
+      let resp=this.invoiceService.AddInvoice(this.Inv);resp.subscribe((data)=>{this.message=(data)
+      
+        if(this.message == 1)
+      {
+        this.gotoList()
+        this.toastr.success("Your record added Sucessfully!");
+      }
+      else if(this.message == -1)
+      {
+        this.toastr.warning("Oops ! Invoice No is already exist");
+      }
+      else
+      {
+        this.toastr.warning("Error !!!");
+      }
+      });
+    }   
+  }
+  
+  gotoList() {
+    // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
+    this.router.navigate(["/Navbar/ListInvoice"]);
+  }
+
+  ClearData() {
+    this.Inv.invoiceNo = null;
+    this.Inv.customerNo = null;
+    this.Inv.invoiceDate = null;
+    this.Inv.invoiceAmount = null;
   }
 
 }
