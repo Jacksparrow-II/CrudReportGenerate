@@ -20,6 +20,7 @@ constructor(public router: Router) {
 
   display() {
     this.dispname = localStorage.getItem('firstName');
+    //let resp= this.invoiceService.DeleteInvoice(row.invoiceNo);
   }
 
   onLogout() {

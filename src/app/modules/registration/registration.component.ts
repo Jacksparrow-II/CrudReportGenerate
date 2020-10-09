@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
   //   { name: 'Apple', value: 'apple' }
   // ];  
 
-  Reg: Registration = new Registration ();
+  Registration: Registration = new Registration ();
   message:any;  
 
   constructor(private fb: FormBuilder,private http: HttpClient,private registrationService: RegistrationService,private toastr: ToastrService,public router: Router) {
@@ -81,8 +81,8 @@ export class RegistrationComponent implements OnInit {
 
   public registerNow(){
     {
-      this.Reg.region = this.selectedRegions.toString();
-      let resp=this.registrationService.Registration(this.Reg);resp.subscribe((data)=>{this.message=(data)
+      this.Registration.region = this.selectedRegions.toString();
+      let resp=this.registrationService.Registration(this.Registration);resp.subscribe((data)=>{this.message=(data)
         if(this.message == 1)
       {
         this.gotoLogin();
@@ -105,14 +105,14 @@ export class RegistrationComponent implements OnInit {
   }
 
   ClearData() {
-    this.Reg.firstName = null;
-    this.Reg.lastName = null;
-    this.Reg.userName = null;
-    this.Reg.password = null;
-    this.Reg.dob = null;
-    this.Reg.gender = null;
-    this.Reg.usertype = null;
-    this.Reg.region = null;
+    this.Registration.firstName = null;
+    this.Registration.lastName = null;
+    this.Registration.userName = null;
+    this.Registration.password = null;
+    this.Registration.dob = null;
+    this.Registration.gender = null;
+    this.Registration.usertype = null;
+    this.Registration.region = null;
   }
 
 
