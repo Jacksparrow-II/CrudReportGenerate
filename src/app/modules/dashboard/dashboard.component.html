@@ -6,7 +6,8 @@
     <!-- Bread crumb -->
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h3 class="text-primary">Dashboard</h3> </div>
+            <h3 class="text-primary">Dashboard</h3> 
+        </div>
         <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -17,16 +18,71 @@
     <!-- End Bread crumb -->
     <!-- Container fluid  -->
     <div class="container-fluid" *ngFor="let list of dispname">
+
+                        <div class="row">
+                    <div class="col-md-3">
+                        <div class="card bg-primary p-30">
+                            <div class="media widget-ten">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-bag f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 class="color-white">278</h2>
+                                    <p class="m-b-0">New Posts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning p-30">
+                            <div class="media widget-ten">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-comment f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 class="color-white">278</h2>
+                                    <p class="m-b-0">New Comment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success p-30">
+                            <div class="media widget-ten">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-vector f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 class="color-white">80 %</h2>
+                                    <p class="m-b-0">Growth Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-danger p-30">
+                            <div class="media widget-ten">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="ti-location-pin f-s-40"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2 class="color-white">278</h2>
+                                    <p class="m-b-0">Total Visitor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <!-- Start Page Content -->
         <div class="row">
             <div class="col-md-3">
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
-                            <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
+                            <span><i class="fa fa-money f-s-40 color-primary"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>{{ list.totalPayCollection }}</h2>
+                            <h2>${{ list.totalPayCollection }}</h2>
                             <p class="m-b-0">Payment Collection</p>
                         </div>
                     </div>
@@ -39,7 +95,7 @@
                             <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>{{ list.totalSalse }}</h2>
+                            <h2>${{ list.totalSalse }}</h2>
                             <p class="m-b-0">Sales</p>
                         </div>
                     </div>
@@ -76,14 +132,14 @@
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
                     <!-- column -->
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Extra Area Chart</h4>
-                                <div id="extra-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Extra Area Chart</h4>
+                          <div id="extra-area-chart"></div>
+                   </div>
+                </div>
+            </div>
                     <!-- column -->
 
             <!-- column -->

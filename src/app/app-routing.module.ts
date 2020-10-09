@@ -52,10 +52,10 @@ const routes: Routes = [
   
     { path: 'ListReports', component: ReportsComponent,canActivate:[AuthGuard] },
 
-    { path: '**', redirectTo: 'Dashboard' }
+    //{ path: '**', redirectTo: 'Dashboard' }
   ]
 },
-  { path: '**', redirectTo: 'Login' }
+  //{ path: '**', redirectTo: 'Login' }
 
 ];
 

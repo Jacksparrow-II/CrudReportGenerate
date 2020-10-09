@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigateByUrl('/Navbar/Dashboard', { skipLocationChange: true });
+    //this.router.navigateByUrl('/Navbar/Dashboard', { skipLocationChange: true });
     this.router.navigate(["/Navbar/Dashboard"]);
   }
 }
