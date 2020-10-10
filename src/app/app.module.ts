@@ -42,6 +42,7 @@ import { LoginComponent } from './modules/login/login.component';
 import { AuthInterceptor } from './modules/auth/auth.interceptor';
 import { RegistrationComponent } from './modules/registration/registration.component';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { EditProfileComponent } from './modules/edit-profile/edit-profile.compon
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ChartsModule
 
   ],
 providers: [CrudReportService,CustomerService,InvoiceService,PaymentService,ReportsService,{

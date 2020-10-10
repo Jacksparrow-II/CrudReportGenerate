@@ -95,7 +95,7 @@
                             <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>${{ list.totalSalse }}</h2>
+                            <h2>${{ list.totalSales }}</h2>
                             <p class="m-b-0">Sales</p>
                         </div>
                     </div>
@@ -131,6 +131,9 @@
 
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
+            <!-- <p-chart type="bar" [data]="data"></p-chart>
+            <button type="button" pButton (click)="update($event)"></button> -->
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                     <!-- column -->
             <div class="col-lg-8">
                 <div class="card">
