@@ -53,7 +53,7 @@ export class ListPaymentComponent implements OnInit {
                 if(type === "sort" || type === "type"){
                   return data;
                 }
-              return moment(data).format("MMM-DD-YYYY");
+              return moment(data).format("DD-MMM-YYYY");
             }
           },
           { data: 'paymentAmount', render: $.fn.dataTable.render.number(',', '.', 2, '$'), className: "dt-right"},

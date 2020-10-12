@@ -79,15 +79,16 @@
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
-                            <span><i class="fa fa-money f-s-40 color-primary"></i></span>
+                            <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>${{ list.totalPayCollection }}</h2>
-                            <p class="m-b-0">Payment Collection</p>
+                            <h2>{{ list.totalCustomer }}</h2>
+                            <p class="m-b-0">Customer</p>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-3">
                 <div class="card p-30">
                     <div class="media">
@@ -105,11 +106,11 @@
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
-                            <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
+                            <span><i class="fa fa-money f-s-40 color-primary"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>25</h2>
-                            <p class="m-b-0">Stores</p>
+                            <h2>${{ list.totalPayCollection }}</h2>
+                            <p class="m-b-0">Payment Collection</p>
                         </div>
                     </div>
                 </div>
@@ -118,31 +119,33 @@
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
-                            <span><i class="fa fa-user f-s-40 color-danger"></i></span>
+                            <span><i class="fa fa-grav f-s-40 color-black"></i></span>
                         </div>
                         <div class="media-body media-text-right">
-                            <h2>{{ list.totalCustomer }}</h2>
-                            <p class="m-b-0">Customer</p>
+                            <h2>25</h2>
+                            <p class="m-b-0">Client</p>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
 
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
             <!-- <p-chart type="bar" [data]="data"></p-chart>
             <button type="button" pButton (click)="update($event)"></button> -->
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
+            <google-chart [data]="pieChart" style = "width: 550px; height: 400px; margin: 0 auto"></google-chart>
                     <!-- column -->
-            <div class="col-lg-8">
+            <!-- <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Extra Area Chart</h4>
                           <div id="extra-area-chart"></div>
                    </div>
                 </div>
-            </div>
+            </div> -->
                     <!-- column -->
 
             <!-- column -->
@@ -159,7 +162,7 @@
                             <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                         </div>
 
-                        <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSalse }}</span></p>
+                        <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSales }}</span></p>
                         <div class="progress">
                             <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                         </div>

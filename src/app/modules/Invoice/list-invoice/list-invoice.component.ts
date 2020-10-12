@@ -58,7 +58,7 @@ export class ListInvoiceComponent implements OnInit {
                 if(type === "sort" || type === "type"){
                   return data;
                 }
-              return moment(data).format("MMM-DD-YYYY");
+              return moment(data).format("DD-MMM-YYYY");
             }
           },
           { data: 'invoiceAmount', render: $.fn.dataTable.render.number(',', '.', 2, '$'), className: "dt-right"},
@@ -67,7 +67,7 @@ export class ListInvoiceComponent implements OnInit {
                 if(type === "sort" || type === "type"){
                   return data;
                 }
-              return moment(data).format("MMM-DD-YYYY");
+              return moment(data).format("DD-MMM-YYYY");
             }
           },
           {

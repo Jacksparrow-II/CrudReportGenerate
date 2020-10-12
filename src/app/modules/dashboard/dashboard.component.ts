@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportsService } from './../../Services/reports.service';
 import {ChartModule} from 'primeng/chart';
+import { GoogleChartInterface } from 'ng2-google-charts';
 
 @Component({
   selector: 'app-dashboard',
@@ -38,7 +39,22 @@ export class DashboardComponent implements OnInit {
       .subscribe((data) => this.dispname=data);
   }
 
-  update(event: Event) {
-}
+  public pieChart: GoogleChartInterface = {
+    chartType: 'PieChart',
+    dataTable: [
+      ['Task', 'Hours per Day'],
+      ['Work',     11],
+      ['Eat',      2],
+      ['Commute',  2],
+      ['Watch TV', 2],
+      ['Sleep',    7]
+    ],
+    //firstRowIsData: true,
+    options: {'title': 'Tasks',
+    'width':550,
+    'height':400},
+  };
+
 
 }
+

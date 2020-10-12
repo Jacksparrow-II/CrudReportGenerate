@@ -43,6 +43,7 @@ import { AuthInterceptor } from './modules/auth/auth.interceptor';
 import { RegistrationComponent } from './modules/registration/registration.component';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
 import { ChartsModule } from 'ng2-charts';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { ChartsModule } from 'ng2-charts';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    Ng2GoogleChartsModule,
     ChartsModule
 
   ],
