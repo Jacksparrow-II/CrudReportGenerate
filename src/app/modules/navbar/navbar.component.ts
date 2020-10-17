@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 
   dispname : any;
+  invList : any;
 
 constructor(public router: Router) {
 
@@ -20,8 +21,11 @@ constructor(public router: Router) {
 
   display() {
     this.dispname = localStorage.getItem('firstName');
-    //let resp= this.invoiceService.DeleteInvoice(row.invoiceNo);
   }
+
+  // GetById(userId: number){
+  //   this.router.navigate(['EditProfile',userId]);
+  // }
 
   onLogout() {
     localStorage.removeItem('token');

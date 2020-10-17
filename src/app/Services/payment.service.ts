@@ -35,4 +35,9 @@ export class PaymentService {
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })  
     return this.http.get(environment.apiBaseURI + "/api/Payment/PaymentById/" + paymentNo, {headers :tokenHeader });
   }
+
+  GetInvoiceDetailsByNo(id:string) {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Payment/GetInvoiceDetails/" + id ,{headers :tokenHeader });
+   } 
 }

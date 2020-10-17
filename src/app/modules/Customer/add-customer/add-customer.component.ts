@@ -38,23 +38,6 @@ export class AddCustomerComponent implements OnInit {
       {
         this.gotoList()
         this.toastr.success("Your record added Sucessfully!");
-        // const Toast = Swal.mixin({
-        //   toast: true,
-        //   position: 'top-end',
-        //   background: 'red',
-        //   showConfirmButton: false,
-        //   timer: 3000,
-        //   timerProgressBar: true,
-        //   didOpen: (toast) => {
-        //     toast.addEventListener('mouseenter', Swal.stopTimer)
-        //     toast.addEventListener('mouseleave', Swal.resumeTimer)
-        //   }
-        // })
-        
-        // Toast.fire({
-        //   icon: 'success',
-        //   title: 'Your record added Sucessfully!'
-        // })
       }
       else if(this.message == -1)
       {
@@ -69,7 +52,6 @@ export class AddCustomerComponent implements OnInit {
   }
   
   gotoList() {
-    // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
     this.router.navigate(["/Navbar/ListCustomer"]);
   }
 

@@ -43,16 +43,16 @@ export class DashboardComponent implements OnInit {
     chartType: 'PieChart',
     dataTable: [
       ['Task', 'Hours per Day'],
-      ['Work',     11],
-      ['Eat',      2],
-      ['Commute',  2],
-      ['Watch TV', 2],
-      ['Sleep',    7]
+      ['Customer',     20],
+      ['Invoice',      16],
+      ['sales',  77],
+      ['PayCollection', 48],
+      ['store',    12]
     ],
     //firstRowIsData: true,
     options: {'title': 'Tasks',
-    'width':550,
-    'height':400},
+    'width':650,
+    'height':550},
   };
 
 

@@ -101,7 +101,7 @@ export class ListCustomerComponent implements OnInit {
           }
           else if(data == -1)
           {
-            this.toastr.warning('Pleace First Delete All Payment & Invoice of this Customer')     
+            this.toastr.warning('Please First Delete All Payment & Invoice of this Customer')     
           }  
           else
           {

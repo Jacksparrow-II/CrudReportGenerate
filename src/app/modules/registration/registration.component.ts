@@ -22,24 +22,13 @@ export class RegistrationComponent implements OnInit {
     gender: new FormControl('',Validators.required),
     usertype: new FormControl('',Validators.required)
     //region: new FormControl('',Validators.required)
-  })
-
-  //Region = ['North','East','West','South'];
-
-  // Data: Array<any> = [
-  //   { name: 'Pear', value: 'pear' },
-  //   { name: 'Plum', value: 'plum' },
-  //   { name: 'Kiwi', value: 'kiwi' },
-  //   { name: 'Apple', value: 'apple' }
-  // ];  
+  }) 
 
   Registration: Registration = new Registration ();
   message:any;  
 
   constructor(private fb: FormBuilder,private http: HttpClient,private registrationService: RegistrationService,private toastr: ToastrService,public router: Router) {
-    // this.form = this.fb.group({
-    //   checkArray: this.fb.array([])
-    // })
+
    }
 
   ngOnInit(): void {

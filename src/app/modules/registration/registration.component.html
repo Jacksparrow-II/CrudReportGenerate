@@ -17,7 +17,7 @@
                                                                             
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="firstName" id="firstName" name="firstName"  class="form-control" placeholder="firstName" formControlName="firstName" [(ngModel)]="Registration.firstName" [ngClass]="{'is-invalid':
+                                        <input type="firstName" id="firstName" name="firstName"  class="form-control" placeholder="First Name" formControlName="firstName" [(ngModel)]="Registration.firstName" [ngClass]="{'is-invalid':
                                         form.get('firstName').touched && form.get('firstName').invalid}">
                                         <div class="invalid-feedback">
                                             <div>Input is required </div>
@@ -26,7 +26,7 @@
 
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="lastName" id="lastName" name="lastName"  class="form-control" placeholder="lastName"  formControlName="lastName" [(ngModel)]="Registration.lastName" [ngClass]="{'is-invalid':
+                                        <input type="lastName" id="lastName" name="lastName"  class="form-control" placeholder="Last Name"  formControlName="lastName" [(ngModel)]="Registration.lastName" [ngClass]="{'is-invalid':
                                         form.get('lastName').touched && form.get('lastName').invalid}">
                                         <div class="invalid-feedback">
                                             <div>Input is required </div>
@@ -45,7 +45,7 @@
 
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" id="password" name="password"  class="form-control" placeholder="password" formControlName="password" [(ngModel)]="Registration.password" [ngClass]="{'is-invalid':
+                                        <input type="password" id="password" name="password"  class="form-control" placeholder="Password" formControlName="password" [(ngModel)]="Registration.password" [ngClass]="{'is-invalid':
                                         form.get('password').touched && form.get('password').invalid}">
                                         <div class="invalid-feedback">
                                             <div>Input is required </div>
@@ -126,7 +126,7 @@
         								</label>
 
                                     </div>
-                                    <button name="submit_reg" value="Register"  type="submit" [disabled]="!form.valid"  (click)="registerNow()" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                                    <button name="submit_reg" value="Register"  type="submit" [disabled]="!form.valid"  (click)="registerNow()" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign Up</button>
                                     <div class="register-link m-t-15 text-center">
                                         <p>Already have account ? <a routerLink = "/Login"> Sign in</a></p>
                                     </div>

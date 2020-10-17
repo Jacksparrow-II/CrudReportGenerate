@@ -98,8 +98,8 @@ export class ListInvoiceComponent implements OnInit {
         // {
           
           Swal.fire({
-            title: 'Are you sure to delete this Customer?',
-            text: "You won't be able to revert this Customer!",
+            title: 'Are you sure to delete this Invoice?',
+            text: "You won't be able to revert this Invoice!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -119,7 +119,7 @@ export class ListInvoiceComponent implements OnInit {
           }
           else if(data == -1)
           {
-            this.toastr.warning('Pleace First Delete All Payment of this Invoice')     
+            this.toastr.warning('Please First Delete All Payment of this Invoice')     
           }  
           else
           {

@@ -201,7 +201,7 @@
                       <!-- End Messages -->
                   </ul>
                 <div class="col-sm-3 text-right">
-                    <h3 class="text-primary" style="font-family: Times New Roman;"><b>WellCome {{ dispname }}</b></h3> 
+                    <h3 class="text-primary" style="font-family: Times New Roman;"><b>Welcome {{ dispname }}</b></h3> 
                 </div>
                   
                   <!-- User profile and search -->
@@ -313,12 +313,14 @@
                       <!-- Profile -->
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/5.jpg" alt="user" class="profile-pic" /></a>
-                          <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                              <ul class="dropdown-user">
-                                  <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                                  <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
-                                  <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                  <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                          <div class="dropdown-menu dropdown-menu-right animated zoomIn" >
+                              <ul class="dropdown-user" >
+
+                                   <li ><a routerLink="./EditProfile"><i class="ti-user"></i> EditProfile</a>
+                                  <li><a ><i class="ti-wallet"></i> Balance</a></li>
+                                  <li><a ><i class="ti-email"></i> Inbox</a></li>
+                                  <!-- <li ><a (click)="GetById(invList[0].userId)"><i class="ti-user"></i> EditProfile</a></li> -->
+                                  <li><a ><i class="ti-settings"></i> Setting</a></li>
                                   <li><a (click)="onLogout()"><i class="fa fa-power-off"></i> Logout</a></li>
                               </ul>
                           </div>
