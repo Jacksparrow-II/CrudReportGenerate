@@ -1,42 +1,3 @@
-<!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
-
-    <p class="h4 mb-4">Enter details to Add Payment </p>
-
-    <label>Payment No</label>
-    <input type="text" id="paymentNo" [(ngModel)]="Pay.paymentNo" name="paymentNo"  class="form-control mb-4" placeholder="Name" formControlName="paymentNo" [ngClass]="{'is-invalid':form.get('paymentNo').touched && form.get('paymentNo').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Invoice No</label>
-    <input type="text" id="invoiceNo" [(ngModel)]="Pay.invoiceNo" name="invoiceNo"  class="form-control mb-4" placeholder="Number" formControlName="invoiceNo" [ngClass]="{'is-invalid':form.get('invoiceNo').touched && form.get('invoiceNo').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Payment Date</label>
-    <div class="form-group">
-        <input type="date" id="paymentDate" [(ngModel)]="Pay.paymentDate" name="paymentDate"  class="form-control my-input" formControlName="paymentDate" [ngClass]="{'is-invalid':
-        form.get('paymentDate').touched && form.get('invoiceDate').invalid}">
-        <div *ngIf="form.get('paymentDate').touched && form.get('paymentDate').invalid" class="invalid-feedback">
-            <div *ngIf="form.get('paymentDate').errors.required">Input is required </div>
-        </div>
-    </div>
-
-    <label>Payment Amount</label>
-    <input type="number" id="paymentAmount" [(ngModel)]="Pay.paymentAmount" name="paymentAmount"  class="form-control mb-4" placeholder="Name" formControlName="paymentAmount" [ngClass]="{'is-invalid':form.get('paymentAmount').touched && form.get('paymentAmount').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <div class="text-center">
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="registerNow()" type="submit" >Submit</button>
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListPayment">Go to List</button>
-    </div>
-        <router-outlet></router-outlet>
-</form> -->
-
-
 <div class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
     <!-- Main wrapper  -->
@@ -80,18 +41,6 @@
                                                 <!-- <small class="form-control-feedback">Example : CT00001</small>  -->
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group row">
-                                            <label class="control-label text-right col-md-2">Invoice No</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" id="invoiceNo" (Click)="addpayment()" 
-                                                [(ngModel)]="Pay.invoiceNo" name="invoiceNo"  placeholder="Invoice Number"
-                                                formControlName="invoiceNo" 
-                                                [ngClass]="{'is-invalid':form.get('invoiceNo').touched && form.get('invoiceNo').invalid}" >
-                                                <div class="invalid-feedback">
-                                                    <div>Input is required </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
 
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Invoice No</label>
@@ -184,3 +133,64 @@
     </div>
     <router-outlet></router-outlet>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
+
+    <p class="h4 mb-4">Enter details to Add Payment </p>
+
+    <label>Payment No</label>
+    <input type="text" id="paymentNo" [(ngModel)]="Pay.paymentNo" name="paymentNo"  class="form-control mb-4" placeholder="Name" formControlName="paymentNo" [ngClass]="{'is-invalid':form.get('paymentNo').touched && form.get('paymentNo').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Invoice No</label>
+    <input type="text" id="invoiceNo" [(ngModel)]="Pay.invoiceNo" name="invoiceNo"  class="form-control mb-4" placeholder="Number" formControlName="invoiceNo" [ngClass]="{'is-invalid':form.get('invoiceNo').touched && form.get('invoiceNo').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Payment Date</label>
+    <div class="form-group">
+        <input type="date" id="paymentDate" [(ngModel)]="Pay.paymentDate" name="paymentDate"  class="form-control my-input" formControlName="paymentDate" [ngClass]="{'is-invalid':
+        form.get('paymentDate').touched && form.get('invoiceDate').invalid}">
+        <div *ngIf="form.get('paymentDate').touched && form.get('paymentDate').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('paymentDate').errors.required">Input is required </div>
+        </div>
+    </div>
+
+    <label>Payment Amount</label>
+    <input type="number" id="paymentAmount" [(ngModel)]="Pay.paymentAmount" name="paymentAmount"  class="form-control mb-4" placeholder="Name" formControlName="paymentAmount" [ngClass]="{'is-invalid':form.get('paymentAmount').touched && form.get('paymentAmount').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="registerNow()" type="submit" >Submit</button>
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListPayment">Go to List</button>
+    </div>
+        <router-outlet></router-outlet>
+</form> -->

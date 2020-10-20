@@ -16,7 +16,6 @@ export class AuthInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (localStorage.getItem('token') != null) {
             const clonedReq = req.clone({
-                //headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
             });
 
             return next.handle(clonedReq).pipe(
@@ -26,7 +25,6 @@ export class AuthInterceptor implements HttpInterceptor {
                         if (err.status == 401){
                             localStorage.removeItem('token');
                             this.router.navigateByUrl('/Login');
-                            //this.toastr.warning('Login Again.', 'Session Expired.');
                         }
                     }
                 )
@@ -36,9 +34,3 @@ export class AuthInterceptor implements HttpInterceptor {
             return next.handle(req.clone());
     }
 }
-
-
-//         if (localStorage.getItem('token') != null) {
-//             const clonedReq = req.clone({
-//                 headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-//             });

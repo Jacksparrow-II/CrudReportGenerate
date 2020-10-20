@@ -107,17 +107,7 @@ export class ListPaymentComponent implements OnInit {
             )
           }
         })
-
-
-        // if(confirm('Are you sure you want to delete this record !'))
-        // {
-        //   let resp= this.paymentService.DeletePayment(row.paymentNo);
-        //   resp.subscribe((data)=> {this.reid=data});
-        //   r.row(tr).remove().draw();
-        //   this.toastr.success("Deleted Sucessfully");
-        // }
       });
-
      })
     }
   }

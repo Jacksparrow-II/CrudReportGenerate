@@ -15,6 +15,11 @@ export class EditprofileService {
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
     return this.http.post(environment.apiBaseURI + "/api/Dashboard/Editprofile/" + userId,EdtPro, {headers :tokenHeader });
   } 
+  
+  GetRegistrationDetails() {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Authentication/GetLogindetails", {headers :tokenHeader });
+   } 
 
   GetEditProfileById(userId:number): Observable<any> { 
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') }) 

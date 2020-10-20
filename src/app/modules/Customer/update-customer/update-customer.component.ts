@@ -36,6 +36,7 @@ export class UpdateCustomerComponent implements OnInit {
       }, error => console.log(error));
   }
 
+  // Update Customer
   public Updatedata(){
     {
       

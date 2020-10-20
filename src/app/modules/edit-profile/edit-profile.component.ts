@@ -25,29 +25,16 @@ export class EditProfileComponent implements OnInit {
     //region: new FormControl('',Validators.required)
   })
 
-  //Region = ['North','East','West','South'];
-
-  // Data: Array<any> = [
-  //   { name: 'Pear', value: 'pear' },
-  //   { name: 'Plum', value: 'plum' },
-  //   { name: 'Kiwi', value: 'kiwi' },
-  //   { name: 'Apple', value: 'apple' }
-  // ];  
-
-  EdtPro: EdtPro = new EdtPro ();
+  EdtPro1: EdtPro = new EdtPro ();
   message:any; 
   userId:number;
   public desobj : any;
 
   constructor(private fb: FormBuilder,public route: ActivatedRoute,private http: HttpClient,private editprofileService: EditprofileService,private toastr: ToastrService,public router: Router) {
-    // this.form = this.fb.group({
-    //   checkArray: this.fb.array([])
-    // })
+
    }
 
   ngOnInit(): void {
-    //this.form = this.fb.group({
-    //name: this.fb.array([])
 
     this.desobj = new EdtPro();
     this.userId = this.route.snapshot.params['userId'];
@@ -55,7 +42,7 @@ export class EditProfileComponent implements OnInit {
     this.editprofileService.GetEditProfileById(this.userId)
       .subscribe(data => {
         console.log(data)
-        this.EdtPro = data;
+        this.EdtPro1 = data;
       }, error => console.log(error));
   }
 
@@ -90,15 +77,15 @@ export class EditProfileComponent implements OnInit {
     console.log(this.selectedRegions);
   }
 
-
+//Edit Profile
   public registerNow(){
     {
           
-     let resp=this.editprofileService.EditProfile(this.EdtPro,this.userId);
+     let resp=this.editprofileService.EditProfile(this.EdtPro1,this.userId);
      resp.subscribe((data)=>{ this.message=(data)
        if( data == 1)
        {
-         this.gotoLogin()
+         this.gotoDashboard()
          this.toastr.success("Your Profile Update Sucessfully!");
        }
        else if( data == -1)
@@ -113,18 +100,20 @@ export class EditProfileComponent implements OnInit {
     }
   }
 
-  gotoLogin() {
-    this.router.navigate(["/Login"]);
+  gotoDashboard() {
+    this.router.navigateByUrl('/Navbar/Dashboard', { skipLocationChange: true });
+    this.router.navigate(["/Navbar/Dashboard"]);
   }
 
+  // Clear Data
   ClearData() {
-    this.EdtPro.firstName = null;
-    this.EdtPro.lastName = null;
-    this.EdtPro.userName = null;
-    this.EdtPro.password = null;
-    this.EdtPro.dob = null;
-    this.EdtPro.gender = null;
-    this.EdtPro.usertype = null;
-    this.EdtPro.region = null;
+    this.EdtPro1.firstName = null;
+    this.EdtPro1.lastName = null;
+    this.EdtPro1.userName = null;
+    this.EdtPro1.password = null;
+    this.EdtPro1.dob = null;
+    this.EdtPro1.gender = null;
+    this.EdtPro1.usertype = null;
+    this.EdtPro1.region = null;
   }
 }

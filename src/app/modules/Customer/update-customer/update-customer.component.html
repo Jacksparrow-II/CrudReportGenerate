@@ -1,27 +1,3 @@
-<!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
-
-    <p class="h4 mb-4">Enter details to Update Customer </p>
-
-    <label>Customer No</label>
-    <input disabled type="text" id="CustomerNo" [(ngModel)]="Cust.customerNo" name="customerNo"  class="form-control mb-4" placeholder="Number" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Customer Name</label>
-    <input type="text" id="CustomerName" [(ngModel)]="Cust.customerName" name="customerName"  class="form-control mb-4" placeholder="Name" formControlName="customerName" [ngClass]="{'is-invalid':form.get('customerName').touched && form.get('customerName').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <div class="text-center">
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="Updatedata()" type="submit" >Submit</button>
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListCustomer">Go to List</button>
-    </div>
-        <router-outlet></router-outlet>
-</form> -->
-
-
 <div class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
     <!-- Main wrapper  -->
@@ -86,7 +62,6 @@
                                                     </div>
                                                 </div>
                                                 <button type="submit" class=" btn-rounded btn-warning" style=" text-align: center; float:right;"  routerLink = "/Navbar/ListCustomer"  > <i class="fa fa-check"></i> Back to List</button>
-
                                             </div>
                                         </div>
                                     </div>
@@ -106,3 +81,51 @@
     </div>
     <router-outlet></router-outlet>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
+
+    <p class="h4 mb-4">Enter details to Update Customer </p>
+
+    <label>Customer No</label>
+    <input disabled type="text" id="CustomerNo" [(ngModel)]="Cust.customerNo" name="customerNo"  class="form-control mb-4" placeholder="Number" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Customer Name</label>
+    <input type="text" id="CustomerName" [(ngModel)]="Cust.customerName" name="customerName"  class="form-control mb-4" placeholder="Name" formControlName="customerName" [ngClass]="{'is-invalid':form.get('customerName').touched && form.get('customerName').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="Updatedata()" type="submit" >Submit</button>
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListCustomer">Go to List</button>
+    </div>
+        <router-outlet></router-outlet>
+</form> -->

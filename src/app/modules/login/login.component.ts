@@ -33,33 +33,12 @@ export class LoginComponent implements OnInit {
     this.gotoList();
   }
 
-  // public registerNow(){
-  // {
-  //     (this.employeeService.Login(this.emp)).subscribe((data)=>{this.message=(data)
-  //       this.gotoList()
-  //       if(this.message != null)
-  //     {
-        
-  //       this.toastr.success("Login Successfully!");
-  //     }
-  //     else
-  //     {
-  //       this.toastr.warning("UserName or password is not correct!");
-  //     }
-  //     });
-  //   }   
-  // }
-  // gotoList() {
-  //   this.router.navigate(["/List-Employee"]);
-  // }
-
   onSubmit(form: NgForm) {
-    //this.Login.userName = this.formModel.userName;
-    //this.Login.password = this.formModel.password;
     this.loginService.Login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
         localStorage.setItem('firstName', res.firstName);
+        localStorage.setItem('userId', res.userId);
         this.toastr.success('Login Sucessfully')
         this.gotoList();
       },
@@ -73,7 +52,6 @@ export class LoginComponent implements OnInit {
   }
 
   gotoList() {
-    //this.router.navigateByUrl('/Navbar/Dashboard', { skipLocationChange: true });
     this.router.navigate(["/Navbar/Dashboard"]);
   }
 }

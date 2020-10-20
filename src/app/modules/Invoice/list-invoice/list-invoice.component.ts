@@ -1,6 +1,5 @@
 import { DataTablesModule } from 'angular-datatables';
 import { InvoiceService } from './../../../Services/invoice.service';
-import { CrudReportService } from './../../../Services/crud-report.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
@@ -41,6 +40,7 @@ export class ListInvoiceComponent implements OnInit {
       .subscribe((data) => this.invList=data);
   }
 
+  // List Invoice
   gedDatafromsource(){
     {
      this.invoiceService.GetInvoice().subscribe(data => {
@@ -79,6 +79,7 @@ export class ListInvoiceComponent implements OnInit {
         ],
       });
 
+      //Update Invoice
       $("tbody").on("click", "a.method_update", e => {
         e.preventDefault();
 
@@ -87,15 +88,12 @@ export class ListInvoiceComponent implements OnInit {
         this.GetupdateById(row.invoiceNo);
       });
 
+      // Delete Invoice
       $("tbody").on("click", "a.method_delete", e => {
         e.preventDefault();
        
         var tr = $(e.target).closest("tr");
         var row = r.row(tr).data();
-        
-       // this.DeleteCustomer(row.customerNo)
-        // if (confirm('Are you sure to delete this record ?'))
-        // {
           
           Swal.fire({
             title: 'Are you sure to delete this Invoice?',
@@ -132,7 +130,33 @@ export class ListInvoiceComponent implements OnInit {
       }
       })       
       });
-      
+     })
+    }
+  }
+
+  GetupdateById(invoiceNo: string){
+    this.router.navigate(['/Navbar/UpdateInvoice',invoiceNo]);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       // $("tbody").on("click", "a.method_delete", e => {
       //   e.preventDefault();
@@ -175,14 +199,3 @@ export class ListInvoiceComponent implements OnInit {
       //   //   this.toastr.success("Deleted Sucessfully");
       //   // }
       // });
-
-     })
-    }
-  }
-
-  GetupdateById(invoiceNo: string){
-    this.router.navigate(['/Navbar/UpdateInvoice',invoiceNo]);
-
-  }
-
-}

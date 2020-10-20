@@ -1,52 +1,4 @@
-<!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
-
-    <p class="h4 mb-4">Enter details to Add Invoive </p>
-
-    <label>Invoice No</label>
-    <input type="text" id="invoiceNo" [(ngModel)]="Inv.invoiceNo" name="invoiceNo"  class="form-control mb-4" placeholder="Number" formControlName="invoiceNo" [ngClass]="{'is-invalid':form.get('invoiceNo').touched && form.get('invoiceNo').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Customer No</label>
-    <input type="text" id="customerNo" [(ngModel)]="Inv.customerNo" name="customerNo"  class="form-control mb-4" placeholder="Name" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Invoice Date</label>
-    <div class="form-group">
-        <input type="date" id="invoiceDate" [(ngModel)]="Inv.invoiceDate" name="invoiceDate"  class="form-control my-input" formControlName="invoiceDate" [ngClass]="{'is-invalid':
-        form.get('invoiceDate').touched && form.get('invoiceDate').invalid}">
-        <div *ngIf="form.get('invoiceDate').touched && form.get('invoiceDate').invalid" class="invalid-feedback">
-            <div *ngIf="form.get('invoiceDate').errors.required">Input is required </div>
-        </div>
-    </div>
-
-    <label>Invoice Amount</label>
-    <input type="number" id="invoiceAmount" [(ngModel)]="Inv.invoiceAmount" name="invoiceAmount"  class="form-control mb-4" placeholder="Name" formControlName="invoiceAmount" [ngClass]="{'is-invalid':form.get('invoiceAmount').touched && form.get('invoiceAmount').invalid}" >
-    <div class="invalid-feedback">
-        <div>Input is required </div>
-    </div>
-
-    <label>Payment DueDate</label>
-    <div class="form-group">
-        <input type="date" id="paymentDueDate" [(ngModel)]="Inv.paymentDueDate" name="paymentDueDate"  class="form-control my-input" formControlName="paymentDueDate" [ngClass]="{'is-invalid':
-        form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid}">
-        <div *ngIf="form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid" class="invalid-feedback">
-            <div *ngIf="form.get('paymentDueDate').errors.required">Input is required </div>
-        </div>
-    </div>
-
-    <div class="text-center">
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="registerNow()" type="submit" >Submit</button>
-        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListCustomer">Go to List</button>
-    </div>
-        <router-outlet></router-outlet>
-</form> -->
-
     <div class="fix-header fix-sidebar">
-        <!-- Preloader - style you can find in spinners.css -->
         <!-- Main wrapper  -->
         <div id="main-wrapper">
             <!-- Page wrapper  -->
@@ -68,8 +20,7 @@
                     <!-- Start Page Content -->
     
                     <!-- Row -->
-                    <div class="row">
-    
+                    <div class="row">    
                         <div class="col-lg-12">
                             <div class="card card-outline-info">
                                 <div class="card-header">
@@ -119,28 +70,17 @@
                                                     <!-- <small class="form-control-feedback">Example : CT00001</small>  -->
                                                 </div>
                                             </div>
-                                            <!-- <div class="form-group row">
-                                                <label class="control-label text-right col-md-2">Payment Due Date</label>
-                                                <div class="col-md-9">
-                                                    <input type="date" class="form-control" id="paymentDueDate" [(ngModel)]="Inv.paymentDueDate" name="paymentDueDate" formControlName="paymentDueDate" [ngClass]="{'is-invalid':
-                                                    form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid}">
-                                                    <div *ngIf="form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid" class="invalid-feedback">
-                                                        <div *ngIf="form.get('paymentDueDate').errors.required">Input is required </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                         </div>
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="offset-sm-3 col-md-9">
-                                                            <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="registerNow()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
+                                                            <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="AddInvoiceDetails()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
                                                             <button type="button" class="btn-rounded btn-inverse" (click)="ClearData()">Cancel</button>
                                                         </div>
                                                     </div>
                                                     <button type="submit" class=" btn-rounded btn-warning" style=" text-align: center; float:right;" routerLink = "/Navbar/ListInvoice"  > <i class="fa fa-check"></i> Back to List</button>
-    
                                                 </div>
                                             </div>
                                         </div>
@@ -160,3 +100,73 @@
         </div>
         <router-outlet></router-outlet>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form class="container contact-form border-light p-5" [formGroup]="form" >
+
+    <p class="h4 mb-4">Enter details to Add Invoive </p>
+
+    <label>Invoice No</label>
+    <input type="text" id="invoiceNo" [(ngModel)]="Inv.invoiceNo" name="invoiceNo"  class="form-control mb-4" placeholder="Number" formControlName="invoiceNo" [ngClass]="{'is-invalid':form.get('invoiceNo').touched && form.get('invoiceNo').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Customer No</label>
+    <input type="text" id="customerNo" [(ngModel)]="Inv.customerNo" name="customerNo"  class="form-control mb-4" placeholder="Name" formControlName="customerNo" [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Invoice Date</label>
+    <div class="form-group">
+        <input type="date" id="invoiceDate" [(ngModel)]="Inv.invoiceDate" name="invoiceDate"  class="form-control my-input" formControlName="invoiceDate" [ngClass]="{'is-invalid':
+        form.get('invoiceDate').touched && form.get('invoiceDate').invalid}">
+        <div *ngIf="form.get('invoiceDate').touched && form.get('invoiceDate').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('invoiceDate').errors.required">Input is required </div>
+        </div>
+    </div>
+
+    <label>Invoice Amount</label>
+    <input type="number" id="invoiceAmount" [(ngModel)]="Inv.invoiceAmount" name="invoiceAmount"  class="form-control mb-4" placeholder="Name" formControlName="invoiceAmount" [ngClass]="{'is-invalid':form.get('invoiceAmount').touched && form.get('invoiceAmount').invalid}" >
+    <div class="invalid-feedback">
+        <div>Input is required </div>
+    </div>
+
+    <label>Payment DueDate</label>
+    <div class="form-group">
+        <input type="date" id="paymentDueDate" [(ngModel)]="Inv.paymentDueDate" name="paymentDueDate"  class="form-control my-input" formControlName="paymentDueDate" [ngClass]="{'is-invalid':
+        form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid}">
+        <div *ngIf="form.get('paymentDueDate').touched && form.get('paymentDueDate').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('paymentDueDate').errors.required">Input is required </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; margin-right: 5px; text-align: center;" name="submit_reg" value="Register" [disabled]="!form.valid" (click)="registerNow()" type="submit" >Submit</button>
+        <button class="btn btn-info btn-min-width" style=" margin-top: 10px; text-align: center;" name="submit_reg" value="Register" type="submit" routerLink = "/ListCustomer">Go to List</button>
+    </div>
+        <router-outlet></router-outlet>
+</form> -->
+

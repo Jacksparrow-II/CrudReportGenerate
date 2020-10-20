@@ -36,7 +36,7 @@ const routes: Routes = [
     { path: 'Masterpage', component: MasterpageComponent,canActivate:[AuthGuard] }, 
     { path: 'Dashboard', component: DashboardComponent,canActivate:[AuthGuard] }, 
   
-    { path: 'EditProfile', component: EditProfileComponent },  //{ path: 'EditProfile', component: EditProfileComponent },  
+    { path: 'EditProfile/:userId', component: EditProfileComponent },  //{ path: 'EditProfile', component: EditProfileComponent },  
   
     { path: 'AddCustomer', component: AddCustomerComponent,canActivate:[AuthGuard] }, 
     { path: 'ListCustomer', component: ListCustomerComponent,canActivate:[AuthGuard] },

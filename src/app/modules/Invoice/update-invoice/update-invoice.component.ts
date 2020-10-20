@@ -1,7 +1,6 @@
 import { InvoiceService } from './../../../Services/invoice.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"; 
-import { CrudReportService } from '../../../Services/crud-report.service'; 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Inv } from '../../../Models/Invoice';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -40,6 +39,8 @@ export class UpdateInvoiceComponent implements OnInit {
         this.Inv = data;
       }, error => console.log(error));
   }
+
+  //Update Invoice
   public Updatedata(){
     {
       

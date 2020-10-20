@@ -37,6 +37,7 @@ export class ListCustomerComponent implements OnInit {
       .subscribe((data) => this.custList=data);
   }
 
+  // Listt Data Table
   gedDatafromsource(){
     {
      this.customerService.GetCustomer().subscribe(data => {
@@ -61,6 +62,7 @@ export class ListCustomerComponent implements OnInit {
 
       //$("table_Customer tbody").unbind();
       
+      // Update Customer
       $("tbody").on("click", "a.method_update", e => {
         e.preventDefault();
 
@@ -69,16 +71,13 @@ export class ListCustomerComponent implements OnInit {
         this.GetupdateById(row.customerNo);
       });
 
+      // Delete Customer
       $("tbody").on("click", "a.method_delete", e => {
         e.preventDefault();
        
         var tr = $(e.target).closest("tr");
         var row = r.row(tr).data();
-        
-       // this.DeleteCustomer(row.customerNo)
-        // if (confirm('Are you sure to delete this record ?'))
-        // {
-          
+                  
           Swal.fire({
             title: 'Are you sure to delete this Customer?',
             text: "You won't be able to revert this Customer!",
@@ -116,7 +115,41 @@ export class ListCustomerComponent implements OnInit {
       }
       })       
       });
-      
+     })
+    }
+  }
+
+  GetupdateById(customerNo: string){
+    this.router.navigate(['/Navbar/UpdateCustomer',customerNo]);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       // $("tbody").on("click", "a.method_delete", e => {
       //   e.preventDefault();
@@ -221,14 +254,3 @@ export class ListCustomerComponent implements OnInit {
       //     }
       //   }
       // });
-
-
-     })
-    }
-  }
-
-  GetupdateById(customerNo: string){
-    this.router.navigate(['/Navbar/UpdateCustomer',customerNo]);
-
-  }
-}

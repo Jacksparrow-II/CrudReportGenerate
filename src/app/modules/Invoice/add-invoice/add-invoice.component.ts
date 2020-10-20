@@ -1,7 +1,6 @@
 import { InvoiceService } from './../../../Services/invoice.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http"; 
-import { CrudReportService } from '../../../Services/crud-report.service'; 
+import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
 import { Inv } from '../../../Models/Invoice';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -19,7 +18,6 @@ export class AddInvoiceComponent implements OnInit {
     customerNo: new FormControl('',Validators.required),
     invoiceDate: new FormControl('',Validators.required),
     invoiceAmount: new FormControl('',Validators.required)
-    // paymentDueDate: new FormControl('',Validators.required)
   })
 
   Inv: Inv = new Inv ();
@@ -30,7 +28,8 @@ export class AddInvoiceComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public registerNow(){
+  // Add Invoice
+  public AddInvoiceDetails(){
     {
       let resp=this.invoiceService.AddInvoice(this.Inv);resp.subscribe((data)=>{this.message=(data)
       

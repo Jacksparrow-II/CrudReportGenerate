@@ -33,12 +33,13 @@ export class DashboardComponent implements OnInit {
     this.display();
   }
 
+  // Display Customer, Invoice and many more on dashboard
   display() {
-    //this.dispname.reportsService();
     this.reportsService.GetDashboardDetails()
       .subscribe((data) => this.dispname=data);
   }
 
+  // Google Chart
   public pieChart: GoogleChartInterface = {
     chartType: 'PieChart',
     dataTable: [

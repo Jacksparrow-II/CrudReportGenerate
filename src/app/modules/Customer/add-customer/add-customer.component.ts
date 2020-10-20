@@ -1,14 +1,10 @@
 import { CustomerService } from './../../../Services/customer.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"; 
-import { CrudReportService } from '../../../Services/crud-report.service'; 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Cust } from '../../../Models/Customer';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
-import { ifError } from 'assert';
 
 @Component({
   selector: 'app-add-customer',
@@ -28,8 +24,9 @@ export class AddCustomerComponent implements OnInit {
   constructor(private http: HttpClient,private customerService: CustomerService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
+  
   }
-
+//Add Customer
   public registerNow(){
     {
   
@@ -51,10 +48,12 @@ export class AddCustomerComponent implements OnInit {
     }   
   }
   
+// Go To List
   gotoList() {
     this.router.navigate(["/Navbar/ListCustomer"]);
   }
 
+// Clear Form Data
   ClearData() {
     this.Cust.customerNo = null;
     this.Cust.customerName = null;
