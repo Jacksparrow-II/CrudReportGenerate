@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div *ngIf="navbarService.Visible;else Nonav">
+    <app-navbar></app-navbar>
+  
+</div>
+   
+  <ng-template #Nonav>
+    <router-outlet></router-outlet>
+  </ng-template>

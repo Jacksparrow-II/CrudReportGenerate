@@ -24,38 +24,31 @@ import { AuthGuard } from './modules/auth/auth.guard';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'Navbar', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'Login', pathMatch: 'full' }, 
 
   { path: 'Login', component: LoginComponent }, 
   { path: 'Registration', component: RegistrationComponent }, 
 
-{
-  path: 'Navbar', component: NavbarComponent, children: [
-    { path: '', redirectTo: 'Dashboard', pathMatch: 'full' }, 
+  { path: 'Navbar', component: NavbarComponent }, 
 
-    { path: 'Masterpage', component: MasterpageComponent,canActivate:[AuthGuard] }, 
-    { path: 'Dashboard', component: DashboardComponent,canActivate:[AuthGuard] }, 
+  { path: 'Masterpage', component: MasterpageComponent,canActivate:[AuthGuard] }, 
+  { path: 'Dashboard', component: DashboardComponent,canActivate:[AuthGuard] }, 
   
-    { path: 'EditProfile/:userId', component: EditProfileComponent },  //{ path: 'EditProfile', component: EditProfileComponent },  
+  { path: 'EditProfile/:userId', component: EditProfileComponent },  //{ path: 'EditProfile', component: EditProfileComponent },  
   
-    { path: 'AddCustomer', component: AddCustomerComponent,canActivate:[AuthGuard] }, 
-    { path: 'ListCustomer', component: ListCustomerComponent,canActivate:[AuthGuard] },
-    { path: 'UpdateCustomer/:customerNo', component: UpdateCustomerComponent,canActivate:[AuthGuard] },
+  { path: 'AddCustomer', component: AddCustomerComponent,canActivate:[AuthGuard] }, 
+  { path: 'ListCustomer', component: ListCustomerComponent,canActivate:[AuthGuard] },
+  { path: 'UpdateCustomer/:customerNo', component: UpdateCustomerComponent,canActivate:[AuthGuard] },
   
-    { path: 'ListInvoice', component: ListInvoiceComponent,canActivate:[AuthGuard] },
-    { path: 'AddInvoice', component: AddInvoiceComponent,canActivate:[AuthGuard] }, 
-    { path: 'UpdateInvoice/:invoiceNo', component: UpdateInvoiceComponent,canActivate:[AuthGuard] },
+  { path: 'ListInvoice', component: ListInvoiceComponent,canActivate:[AuthGuard] },
+  { path: 'AddInvoice', component: AddInvoiceComponent,canActivate:[AuthGuard] }, 
+  { path: 'UpdateInvoice/:invoiceNo', component: UpdateInvoiceComponent,canActivate:[AuthGuard] },
   
-    { path: 'ListPayment', component: ListPaymentComponent,canActivate:[AuthGuard] },
-    { path: 'AddPayment', component: AddPaymentComponent,canActivate:[AuthGuard] }, 
-    { path: 'UpdatePayment/:paymentNo', component: UpdatePaymentComponent,canActivate:[AuthGuard] },
+  { path: 'ListPayment', component: ListPaymentComponent,canActivate:[AuthGuard] },
+  { path: 'AddPayment', component: AddPaymentComponent,canActivate:[AuthGuard] }, 
+  { path: 'UpdatePayment/:paymentNo', component: UpdatePaymentComponent,canActivate:[AuthGuard] },
   
-    { path: 'ListReports', component: ReportsComponent,canActivate:[AuthGuard] },
-
-    //{ path: '**', redirectTo: 'Dashboard' }
-  ]
-},
-  //{ path: '**', redirectTo: 'Login' }
+  { path: 'ListReports', component: ReportsComponent,canActivate:[AuthGuard] },
 
 ];
 

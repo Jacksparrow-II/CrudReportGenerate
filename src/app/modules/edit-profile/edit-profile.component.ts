@@ -101,8 +101,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   gotoDashboard() {
-    this.router.navigateByUrl('/Navbar/Dashboard', { skipLocationChange: true });
-    this.router.navigate(["/Navbar/Dashboard"]);
+    this.router.navigateByUrl('/Dashboard', { skipLocationChange: true });
+    this.router.navigate(["/Dashboard"]);
   }
 
   // Clear Data

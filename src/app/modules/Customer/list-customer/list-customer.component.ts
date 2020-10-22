@@ -120,7 +120,7 @@ export class ListCustomerComponent implements OnInit {
   }
 
   GetupdateById(customerNo: string){
-    this.router.navigate(['/Navbar/UpdateCustomer',customerNo]);
+    this.router.navigate(['/UpdateCustomer',customerNo]);
   }
 
 }

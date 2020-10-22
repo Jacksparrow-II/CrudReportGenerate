@@ -52,7 +52,7 @@ export class AddInvoiceComponent implements OnInit {
   
   gotoList() {
     // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
-    this.router.navigate(["/Navbar/ListInvoice"]);
+    this.router.navigate(["/ListInvoice"]);
   }
 
   ClearData() {

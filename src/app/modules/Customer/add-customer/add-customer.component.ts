@@ -50,7 +50,7 @@ export class AddCustomerComponent implements OnInit {
   
 // Go To List
   gotoList() {
-    this.router.navigate(["/Navbar/ListCustomer"]);
+    this.router.navigate(["/ListCustomer"]);
   }
 
 // Clear Form Data

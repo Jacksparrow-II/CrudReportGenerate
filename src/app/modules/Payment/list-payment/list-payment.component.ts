@@ -113,7 +113,7 @@ export class ListPaymentComponent implements OnInit {
   }
 
   GetupdateById(paymentNo: string){
-    this.router.navigate(['/Navbar/UpdatePayment',paymentNo]);
+    this.router.navigate(['/UpdatePayment',paymentNo]);
 
   }
 }

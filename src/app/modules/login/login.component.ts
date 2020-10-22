@@ -1,3 +1,4 @@
+import { NavbarService } from './../../Services/navbar.service';
 import { LoginService } from './../../Services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"; 
@@ -25,7 +26,11 @@ export class LoginComponent implements OnInit {
 
   message:any;
 
-  constructor(public http: HttpClient,private loginService: LoginService,public router: Router,private toastr: ToastrService) { }
+  constructor(public http: HttpClient,private loginService: LoginService,public navbarService : NavbarService
+    ,public router: Router,private toastr: ToastrService) {
+    navbarService.Hide(); 
+  
+   }
 
   ngOnInit(): void {
   
@@ -41,6 +46,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userId', res.userId);
         this.toastr.success('Login Sucessfully')
         this.gotoList();
+        this.navbarService.Show();
       },
       err => {
         if (err.status == 400)
@@ -52,6 +58,6 @@ export class LoginComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(["/Navbar/Dashboard"]);
+    this.router.navigate(["/Dashboard"]);
   }
 }

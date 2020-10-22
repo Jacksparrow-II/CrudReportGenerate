@@ -112,7 +112,7 @@ export class AddPaymentComponent implements OnInit {
 
   gotoList() {
     // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
-    this.router.navigate(["/Navbar/ListPayment"]);
+    this.router.navigate(["/ListPayment"]);
   }
 
   ClearData() {

@@ -17,7 +17,7 @@
     <!-- Container fluid  -->
     <div class="container-fluid" *ngFor="let list of dispname">
 
-                        <div class="row">
+                <div class="row">
                     <div class="col-md-3">
                         <div class="card bg-primary p-30">
                             <div class="media widget-ten">
@@ -129,12 +129,41 @@
             
         </div>
 
+        <!-- <table>
+            <tr>
+              <td style="width: 50%;">
+                <div class="card-header">
+                  <h4 class="card-title">Chart</h4>
+                </div>
+                <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
+                  <svg></svg>
+                </div>
+              </td>
+            </tr>
+        </table> -->
+
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
             <!-- <p-chart type="bar" [data]="data"></p-chart>
             <button type="button" pButton (click)="update($event)"></button> -->
             <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
-            <google-chart [data]="pieChart" style = "width: 550px; height: 400px; margin: 0 auto"></google-chart>
+
+            <!-- <google-chart [data]="pieChart" style = "width: 550px; height: 400px; margin: 0 auto"></google-chart> -->
+            
+            <!-- <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
+                <svg></svg>
+            </div> -->
+
+            <google-chart 
+                #chart
+                width="600"
+                [title]="DisplayChart.title"
+                [type]="DisplayChart.type"
+                [data]="DisplayChart.data"
+                [columns]="DisplayChart.columns"
+                [options]="DisplayChart.options" >
+            </google-chart>
+
                     <!-- column -->
             <!-- <div class="col-lg-8">
                 <div class="card">
@@ -319,12 +348,7 @@
                       <a href='#' class="ti-close"></a>
                     </label>
                                             </li>
-                                            <li>
-                                                <label>
-                      <input type="checkbox" checked><i class="bg-danger"></i><span>Design One page theme</span>
-                      <a href='#' class="ti-close"></a>
-                    </label>
-                                            </li>
+                                            k
 
                                             <li>
                                                 <label>

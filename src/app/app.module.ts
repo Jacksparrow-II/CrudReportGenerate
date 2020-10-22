@@ -6,6 +6,7 @@ import { CustomerService } from "./Services/customer.service";
 import { InvoiceService } from "./Services/invoice.service";
 import { PaymentService } from "./Services/payment.service";
 import { ReportsService } from './Services/reports.service';
+import { NavbarService } from './Services/navbar.service';
 
 import { AddCustomerComponent } from './modules/Customer/add-customer/add-customer.component';
 import { ListCustomerComponent } from './modules/Customer/list-customer/list-customer.component';
@@ -42,8 +43,10 @@ import { LoginComponent } from './modules/login/login.component';
 import { AuthInterceptor } from './modules/auth/auth.interceptor';
 import { RegistrationComponent } from './modules/registration/registration.component';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
+
 import { ChartsModule } from 'ng2-charts';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 @NgModule({
@@ -85,11 +88,12 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    Ng2GoogleChartsModule,
-    ChartsModule
+    // Ng2GoogleChartsModule,
+    ChartsModule,
+    GoogleChartsModule  
 
   ],
-providers: [CrudReportService,CustomerService,InvoiceService,PaymentService,ReportsService,{
+providers: [CrudReportService,CustomerService,InvoiceService,PaymentService,NavbarService,ReportsService,{
   provide: HTTP_INTERCEPTORS,
   useClass: AuthInterceptor,
   multi: true

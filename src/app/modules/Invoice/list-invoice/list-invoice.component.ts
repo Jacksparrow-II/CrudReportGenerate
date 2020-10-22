@@ -135,7 +135,7 @@ export class ListInvoiceComponent implements OnInit {
   }
 
   GetupdateById(invoiceNo: string){
-    this.router.navigate(['/Navbar/UpdateInvoice',invoiceNo]);
+    this.router.navigate(['/UpdateInvoice',invoiceNo]);
   }
 
 }

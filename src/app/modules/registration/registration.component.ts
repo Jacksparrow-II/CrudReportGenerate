@@ -1,3 +1,4 @@
+import { NavbarService } from './../../Services/navbar.service';
 import { RegistrationService } from './../../Services/registration.service';
 import { Registration } from './../../Models/Registration';
 import { Component, OnInit } from '@angular/core';
@@ -27,8 +28,9 @@ export class RegistrationComponent implements OnInit {
   Registration: Registration = new Registration ();
   message:any;  
 
-  constructor(private fb: FormBuilder,private http: HttpClient,private registrationService: RegistrationService,private toastr: ToastrService,public router: Router) {
-
+  constructor(private fb: FormBuilder,private http: HttpClient,public navbarService : NavbarService
+    ,private registrationService: RegistrationService,private toastr: ToastrService,public router: Router) {
+      navbarService.Hide(); 
    }
 
   ngOnInit(): void {

@@ -23,6 +23,7 @@
     "@angular/router": "~9.1.12",
     "@types/canvasjs": "^1.9.6",
     "angular-datatables": "^9.0.2",
+    "angular-google-charts": "^1.1.6",
     "bootstrap": "^4.5.2",
     "canvasjs": "^1.8.3",
     "chart.js": "^2.9.3",

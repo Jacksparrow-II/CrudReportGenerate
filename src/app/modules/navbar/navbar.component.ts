@@ -32,7 +32,7 @@ constructor(public router: Router,private editprofileService: EditprofileService
   }
   
   GetById(userId: number){
-    this.router.navigate(['/Navbar/EditProfile',userId]);
+    this.router.navigate(['EditProfile',userId]);
   }
 
   display() {

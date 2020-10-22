@@ -21,5 +21,10 @@ export class ReportsService {
     return this.http.get(environment.apiBaseURI + "/api/Dashboard/GetDashboardDetails", {headers :tokenHeader });
   }
 
+  GetChartDetails() {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Dashboard/DisplayChart", {headers :tokenHeader });
+  }
+
 
 }

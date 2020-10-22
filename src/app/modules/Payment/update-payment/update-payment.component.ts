@@ -123,8 +123,8 @@ export class UpdatePaymentComponent implements OnInit {
 
 
    gotoList() {
-     this.router.navigateByUrl('/Navbar/ListPayment', { skipLocationChange: true });
-     this.router.navigate(["/Navbar/ListPayment"]);
+     this.router.navigateByUrl('/ListPayment', { skipLocationChange: true });
+     this.router.navigate(["/ListPayment"]);
    }
 
 }
