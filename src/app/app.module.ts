@@ -40,7 +40,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { LoginComponent } from './modules/login/login.component';
-import { AuthInterceptor } from './modules/auth/auth.interceptor';
+//import { AuthInterceptor } from './modules/auth/auth.interceptor';
 import { RegistrationComponent } from './modules/registration/registration.component';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
 
@@ -89,7 +89,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     MatSidenavModule,
     MatListModule,
     // Ng2GoogleChartsModule,
-    ChartsModule,
+    //ChartsModule,
     GoogleChartsModule  
 
   ],

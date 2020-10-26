@@ -1,5 +1,5 @@
 import { EditprofileService } from './../../Services/editprofile.service';
-import { RegistrationService } from './../../Services/registration.service';
+//import { RegistrationService } from './../../Services/registration.service';
 import { EdtPro } from './../../Models/EditProfile';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
@@ -18,7 +18,7 @@ export class EditProfileComponent implements OnInit {
     firstName: new FormControl('',Validators.required),
     lastName: new FormControl('',Validators.required),
     userName: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('',Validators.required),
+    //password: new FormControl('',Validators.required),
     dob: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
     usertype: new FormControl('',Validators.required)
@@ -110,7 +110,7 @@ export class EditProfileComponent implements OnInit {
     this.EdtPro1.firstName = null;
     this.EdtPro1.lastName = null;
     this.EdtPro1.userName = null;
-    this.EdtPro1.password = null;
+    //this.EdtPro1.password = null;
     this.EdtPro1.dob = null;
     this.EdtPro1.gender = null;
     this.EdtPro1.usertype = null;

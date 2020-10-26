@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { ReportsService } from './../../Services/reports.service';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +18,9 @@ export class DashboardComponent implements OnInit {
   
   data: any;
   dispname: any;
+  value: any;
+  DisplayBarChart: any;
+  DisplayPieChart: any;
 
   public charts: {
     title: string;
@@ -26,7 +30,92 @@ export class DashboardComponent implements OnInit {
     options?: {};
   }[] = [];
 
+
   constructor(private reportsService: ReportsService,private http: HttpClient) {
+
+
+}
+
+  public DisplayChart = {
+    title: 'Display Bar Chart',
+    title1: 'Display Pie Chart',
+    type: ChartType.BarChart,
+    type1: ChartType.PieChart,
+    data: [ ],
+    columns: ['Element', 'Density'],
+    options: {  
+      'width':510,
+      'height':400,
+      animation: {
+        colors: ['#a52714', '#0000ff', '#ff0000', '#00ff00'],
+        duration: 2000,
+        easing: 'ease-in-out',
+        startup: true
+      }
+    }
+  };
+
+
+  ngOnInit(): void {
+
+    this.display();
+
+    this.DashboardChart();
+
+  }
+
+  DashboardChart()
+  {
+    this.value = this.reportsService.GetDashboardDetails().subscribe((data) => { this.value=data
+      this.DisplayBarChart=[['Sales',this.value[0].totalSales],['Pay Collection',this.value[0].totalPayCollection]];
+      this.DisplayPieChart=[['Due Payments',(this.value[0].totalSales-this.value[0].totalPayCollection)],['Pay Collection',this.value[0].totalPayCollection]];
+      //console.log(this.DisplayBarChart);
+    });
+  }
+
+  // Display Customer, Invoice and many more on dashboard
+  display() {
+    this.reportsService.GetDashboardDetails()
+      .subscribe((data) => this.dispname=data);
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*****************************************************************************************************//
+
+
+    
     // this.data = {
     //     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     //     datasets: [
@@ -40,35 +129,45 @@ export class DashboardComponent implements OnInit {
     //         }
     //     ]
     // }
-}
-
-  public DisplayChart = {
-    title: 'Display Chart',
-    type: ChartType.LineChart,
-    data: [
-      ['Copper', 8.94],
-      ['Silver', 10.49],
-      ['Gold', 19.3],
-      ['Platinum', 21.45]
-    ],
-    columns: ['Element', 'Density'],
-    options: {
-      //hAxis: {title: 'Month'},
-      //vAxis: {title: 'Temperature'},   
-      'width':550,
-      'height':400,
-      animation: {
-        colors: ['#a52714', '#0000ff', '#ff0000', '#00ff00'],
-        duration: 250,
-        easing: 'ease-in-out',
-        startup: true
-      }
-    }
-  };
 
 
-  ngOnInit(): void {
-    this.display();
+//*****************************************************************************************************//
+//Samart ar
+// datalength:number;
+//   GetChartDataSales(){   
+//     this.data=this.reportsService.GetChartDetails().subscribe((data)=>{this.data = data
+//       this.datalength=this.data.length;
+//       var temp1=[];
+//     if(this.data != null && this.datalength >0){
+//       for(var i=0;i<this.datalength;i++)
+//       {
+//         var temp = [];
+//         temp.push(this.data[i].dates);
+//         temp.push(this.data[i].sales);
+//         temp1.push(temp);
+//       }
+//     }    
+//     this.data=temp1;
+//     console.log([this.data])    
+//     });
+//   }
+
+
+
+//*****************************************************************************************************//
+
+// <!-- <table>
+// <tr>
+//   <td style="width: 50%;">
+//     <div class="card-header">
+//       <h4 class="card-title">Chart</h4>
+//     </div>
+//     <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
+//       <svg></svg>
+//     </div>
+//   </td>
+// </tr>
+// </table> -->
 
     // this.reportsService.GetChartDetails().subscribe(function (response) {
     //   google.charts.load('current', {
@@ -113,13 +212,13 @@ export class DashboardComponent implements OnInit {
     //       chart.draw(dataTable, options);
     //   });
     // });
-  }
 
-  // Display Customer, Invoice and many more on dashboard
-  display() {
-    this.reportsService.GetDashboardDetails()
-      .subscribe((data) => this.dispname=data);
-  }
+
+
+//*****************************************************************************************************//
+
+
+ //<google-chart [data]="pieChart" style = "width: 550px; height: 400px; margin: 0 auto"></google-chart> -->
 
   // Google Chart
   // public pieChart: GoogleChartInterface = {
@@ -137,7 +236,3 @@ export class DashboardComponent implements OnInit {
   //   'width':650,
   //   'height':550},
   // };
-
-
-}
-

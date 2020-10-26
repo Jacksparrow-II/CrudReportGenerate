@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-//import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+
 import { NavbarComponent } from './modules/navbar/navbar.component';
 import { MasterpageComponent } from './modules/masterpage/masterpage.component';
 import { ListCustomerComponent } from './modules/Customer/list-customer/list-customer.component';
@@ -18,8 +18,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { LoginComponent } from './modules/login/login.component';
 import { RegistrationComponent } from './modules/registration/registration.component';
 import { EditProfileComponent } from './modules/edit-profile/edit-profile.component';
-
-import { AuthGuard } from './modules/auth/auth.guard';
+//import { AuthGuard } from './modules/auth/auth.guard';
 
 
 const routes: Routes = [
@@ -31,24 +30,24 @@ const routes: Routes = [
 
   { path: 'Navbar', component: NavbarComponent }, 
 
-  { path: 'Masterpage', component: MasterpageComponent,canActivate:[AuthGuard] }, 
-  { path: 'Dashboard', component: DashboardComponent,canActivate:[AuthGuard] }, 
+  { path: 'Masterpage', component: MasterpageComponent }, 
+  { path: 'Dashboard', component: DashboardComponent }, 
   
   { path: 'EditProfile/:userId', component: EditProfileComponent },  //{ path: 'EditProfile', component: EditProfileComponent },  
   
-  { path: 'AddCustomer', component: AddCustomerComponent,canActivate:[AuthGuard] }, 
-  { path: 'ListCustomer', component: ListCustomerComponent,canActivate:[AuthGuard] },
-  { path: 'UpdateCustomer/:customerNo', component: UpdateCustomerComponent,canActivate:[AuthGuard] },
+  { path: 'AddCustomer', component: AddCustomerComponent }, 
+  { path: 'ListCustomer', component: ListCustomerComponent },
+  { path: 'UpdateCustomer/:customerNo', component: UpdateCustomerComponent },
   
-  { path: 'ListInvoice', component: ListInvoiceComponent,canActivate:[AuthGuard] },
-  { path: 'AddInvoice', component: AddInvoiceComponent,canActivate:[AuthGuard] }, 
-  { path: 'UpdateInvoice/:invoiceNo', component: UpdateInvoiceComponent,canActivate:[AuthGuard] },
+  { path: 'ListInvoice', component: ListInvoiceComponent },
+  { path: 'AddInvoice', component: AddInvoiceComponent }, 
+  { path: 'UpdateInvoice/:invoiceNo', component: UpdateInvoiceComponent },
   
-  { path: 'ListPayment', component: ListPaymentComponent,canActivate:[AuthGuard] },
-  { path: 'AddPayment', component: AddPaymentComponent,canActivate:[AuthGuard] }, 
-  { path: 'UpdatePayment/:paymentNo', component: UpdatePaymentComponent,canActivate:[AuthGuard] },
+  { path: 'ListPayment', component: ListPaymentComponent },
+  { path: 'AddPayment', component: AddPaymentComponent }, 
+  { path: 'UpdatePayment/:paymentNo', component: UpdatePaymentComponent },
   
-  { path: 'ListReports', component: ReportsComponent,canActivate:[AuthGuard] },
+  { path: 'ListReports', component: ReportsComponent },
 
 ];
 

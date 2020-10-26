@@ -129,83 +129,38 @@
             
         </div>
 
-        <!-- <table>
-            <tr>
-              <td style="width: 50%;">
-                <div class="card-header">
-                  <h4 class="card-title">Chart</h4>
-                </div>
-                <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
-                  <svg></svg>
-                </div>
-              </td>
-            </tr>
-        </table> -->
-
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
             <!-- <p-chart type="bar" [data]="data"></p-chart>
             <button type="button" pButton (click)="update($event)"></button> -->
             <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
-
-            <!-- <google-chart [data]="pieChart" style = "width: 550px; height: 400px; margin: 0 auto"></google-chart> -->
             
             <!-- <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
                 <svg></svg>
             </div> -->
-
+            
             <google-chart 
                 #chart
                 width="600"
                 [title]="DisplayChart.title"
                 [type]="DisplayChart.type"
-                [data]="DisplayChart.data"
+                [data]="DisplayBarChart"
                 [columns]="DisplayChart.columns"
                 [options]="DisplayChart.options" >
             </google-chart>
 
-                    <!-- column -->
-            <!-- <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Extra Area Chart</h4>
-                          <div id="extra-area-chart"></div>
-                   </div>
-                </div>
-            </div> -->
-                    <!-- column -->
+            <google-chart 
+                #chart
+                width="600"
+                [title]="DisplayChart.title1"
+                [type]="DisplayChart.type1"
+                [data]="DisplayPieChart"
+                [columns]="DisplayChart.columns"
+                [options]="DisplayChart.options" >
+            </google-chart>
 
             <!-- column -->
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body browser">
-                        <p class="f-w-600">Customer <span class="pull-right">{{ list.totalCustomer }}</span></p>
-                        <div class="progress ">
-                            <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                        </div>
-
-                        <p class="m-t-30 f-w-600">Invoice Generated<span class="pull-right">{{ list.totalInvoice }}</span></p>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                        </div>
-
-                        <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSales }}</span></p>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                        </div>
-
-                        <p class="m-t-30 f-w-600">Total Revenue<span class="pull-right">${{ list.totalPayCollection }}</span></p>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                        </div>
-
-                        <p class="m-t-30 f-w-600">Store<span class="pull-right">25</span></p>
-                        <div class="progress m-b-30">
-                            <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <!-- column -->
         </div>
 
@@ -213,58 +168,36 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>Message </h4>
-                        </div>
-                        <div class="recent-comment">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body browser">
+                                <p class="f-w-600">Customer <span class="pull-right">{{ list.totalCustomer }}</span></p>
+                                <div class="progress ">
+                                    <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
+        
+                                <p class="m-t-30 f-w-600">Invoice Generated<span class="pull-right">{{ list.totalInvoice }}</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
+        
+                                <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSales }}</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
+        
+                                <p class="m-t-30 f-w-600">Total Revenue<span class="pull-right">${{ list.totalPayCollection }}</span></p>
+                                <div class="progress">
+                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
-                            </div>
-
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media no-border">
-                                <div class="media-left">
-                                    <a href="#"><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. Michael</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-date">October 21, 2018</div>
+        
+                                <p class="m-t-30 f-w-600">Store<span class="pull-right">25</span></p>
+                                <div class="progress m-b-30">
+                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /# card -->
-                </div>
                 <!-- /# column -->
                 <div class="col-lg-6">
                     <div class="card">
@@ -348,7 +281,6 @@
                       <a href='#' class="ti-close"></a>
                     </label>
                                             </li>
-                                            k
 
                                             <li>
                                                 <label>
