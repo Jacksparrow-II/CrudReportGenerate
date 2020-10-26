@@ -4,4 +4,6 @@ export class Pay{
     invoiceNo:string;
     paymentDate:Date;
     paymentAmount:number;
+    createdBy:string;
+    modifyBy:string;
 }

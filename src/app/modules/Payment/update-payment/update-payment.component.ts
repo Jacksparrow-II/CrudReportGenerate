@@ -55,6 +55,8 @@ export class UpdatePaymentComponent implements OnInit {
 
   public Updatedata(){
     {
+
+    this.Pay.modifyBy = localStorage.getItem('firstName');
       
      let resp=this.paymentService.UpadtePayment(this.Pay,this.paymentNo);
      resp.subscribe((data)=>{ this.message=(data)
@@ -75,13 +77,14 @@ export class UpdatePaymentComponent implements OnInit {
     }
    }
 
-   abs(){
+   GetDetails(){
     this.Invoice=this.paymentService.GetInvoiceDetailsByNo(this.Pay.invoiceNo).subscribe((data)=>this.Invoice=data);    
    if( this.Pay.invoiceNo != undefined)
    {
      this.show=true;
    }
   }
+
   registerNow(){
   //  this.abs();
     this.registerNow1();
@@ -90,7 +93,8 @@ export class UpdatePaymentComponent implements OnInit {
 
   public registerNow1() {
 
-   // this.abs();
+    
+
     console.log(this.Invoice[0].invoiceAmount)
     this.DuePayment=(this.Invoice[0].invoiceAmount - this.Invoice[0].paymentAmount);
     if(this.DuePayment < this.Pay.paymentAmount)

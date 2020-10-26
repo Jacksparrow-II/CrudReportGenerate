@@ -4,6 +4,5 @@ export class Login{
     lastName:string;
     userName:string;
     password:string;
-    token: string;
-    
+    token: string;    
 }

@@ -30,6 +30,8 @@ export class AddCustomerComponent implements OnInit {
   public registerNow(){
     {
   
+      this.Cust.createdBy = localStorage.getItem('firstName');
+
       let resp=this.customerService.AddCustomer(this.Cust);resp.subscribe((data)=>{this.message=(data)
         if(this.message == 1)
       {

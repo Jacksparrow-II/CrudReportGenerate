@@ -42,7 +42,8 @@ export class AddPaymentComponent implements OnInit {
 
   public addpayment(){
     {
-      //this.abs();
+      this.Pay.createdBy = localStorage.getItem('firstName');
+
       let resp=this.paymentService.AddPayment(this.Pay);resp.subscribe((data)=>{this.message=(data)
       
       if(this.message == 1)

@@ -44,7 +44,7 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Invoice No</label>
                                             <div class="col-md-9">
-                                                <select class="form-control" (click)="abs()" [(ngModel)]="Pay.invoiceNo" name="invoiceNo" formControlName="invoiceNo" [ngClass]="{'is-invalid':
+                                                <select class="form-control" (click)="GetDetails()" [(ngModel)]="Pay.invoiceNo" name="invoiceNo" formControlName="invoiceNo" [ngClass]="{'is-invalid':
                                                 form.get('invoiceNo').touched && form.get('invoiceNo').invalid}">
                                                     <option *ngFor="let dep of depList" [ngValue]="dep.invoiceNo">{{dep.invoiceNo}}</option>
                                                 </select>

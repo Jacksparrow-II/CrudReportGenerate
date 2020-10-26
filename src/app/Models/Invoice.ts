@@ -5,4 +5,6 @@ export class Inv{
     invoiceDate:Date;
     invoiceAmount:number;
     paymentDueDate:Date;
+    createdBy:string;
+    modifyBy:string;
 }

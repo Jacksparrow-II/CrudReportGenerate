@@ -39,6 +39,8 @@ export class UpdateCustomerComponent implements OnInit {
   // Update Customer
   public Updatedata(){
     {
+
+      this.Cust.modifyBy = localStorage.getItem('firstName');
       
      let resp=this.customerService.UpdateCustomer(this.Cust,this.customerNo);
      resp.subscribe((data)=>{ this.message=(data)
@@ -60,8 +62,8 @@ export class UpdateCustomerComponent implements OnInit {
    }
 
    gotoList() {
-     this.router.navigateByUrl('/Navbar/ListCustomer', { skipLocationChange: true });
-     this.router.navigate(["/Navbar/ListCustomer"]);
+     this.router.navigateByUrl('/ListCustomer', { skipLocationChange: true });
+     this.router.navigate(["/ListCustomer"]);
    }
 
 }

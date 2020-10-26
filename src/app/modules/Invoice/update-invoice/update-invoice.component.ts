@@ -1,8 +1,8 @@
+import { Inv } from './../../../Models/Invoice';
 import { InvoiceService } from './../../../Services/invoice.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"; 
 import { Router, ActivatedRoute } from '@angular/router';
-import { Inv } from '../../../Models/Invoice';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -43,6 +43,8 @@ export class UpdateInvoiceComponent implements OnInit {
   //Update Invoice
   public Updatedata(){
     {
+
+      this.Inv.modifyBy = localStorage.getItem('firstName');
       
      let resp=this.invoiceService.UpdateInvoice(this.Inv,this.invoiceNo);
      resp.subscribe((data)=>{ this.message=(data)
@@ -64,8 +66,8 @@ export class UpdateInvoiceComponent implements OnInit {
    }
 
    gotoList() {
-     this.router.navigateByUrl('/Navbar/ListInvoice', { skipLocationChange: true });
-     this.router.navigate(["/Navbar/ListInvoice"]);
+     this.router.navigateByUrl('/ListInvoice', { skipLocationChange: true });
+     this.router.navigate(["/ListInvoice"]);
    }
 
 }

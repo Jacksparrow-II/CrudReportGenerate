@@ -93,11 +93,51 @@ import { GoogleChartsModule } from 'angular-google-charts';
     GoogleChartsModule  
 
   ],
-providers: [CrudReportService,CustomerService,InvoiceService,PaymentService,NavbarService,ReportsService,{
-  provide: HTTP_INTERCEPTORS,
-  useClass: AuthInterceptor,
-  multi: true
-}],
+providers: [CrudReportService,CustomerService,InvoiceService,PaymentService,NavbarService,ReportsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//   provide: HTTP_INTERCEPTORS,
+//   useClass: AuthInterceptor,
+//   multi: true
+// }

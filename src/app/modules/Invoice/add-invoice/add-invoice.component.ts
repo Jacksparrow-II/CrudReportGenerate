@@ -1,8 +1,8 @@
+import { Inv } from './../../../Models/Invoice';
 import { InvoiceService } from './../../../Services/invoice.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
-import { Inv } from '../../../Models/Invoice';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -31,6 +31,8 @@ export class AddInvoiceComponent implements OnInit {
   // Add Invoice
   public AddInvoiceDetails(){
     {
+      this.Inv.createdBy = localStorage.getItem('firstName');
+
       let resp=this.invoiceService.AddInvoice(this.Inv);resp.subscribe((data)=>{this.message=(data)
       
         if(this.message == 1)
