@@ -68,6 +68,8 @@ export class DashboardComponent implements OnInit {
   {
     this.value = this.reportsService.GetDashboardDetails().subscribe((data) => { this.value=data
       this.DisplayBarChart=[['Sales',this.value[0].totalSales],['Pay Collection',this.value[0].totalPayCollection]];
+    //  this.DisplayBarChart=[['Sales',this.value[0].totalSales],['Pay Collection',this.value[0].totalSales]];
+   
       this.DisplayPieChart=[['Due Payments',(this.value[0].totalSales-this.value[0].totalPayCollection)],['Pay Collection',this.value[0].totalPayCollection]];
       //console.log(this.DisplayBarChart);
     });
