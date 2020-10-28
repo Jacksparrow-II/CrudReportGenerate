@@ -238,3 +238,15 @@ export class DashboardComponent implements OnInit {
   //   'width':650,
   //   'height':550},
   // };
+
+
+
+
+  
+// <p-chart type="bar" [data]="data"></p-chart>
+//   <button type="button" pButton (click)="update($event)"></button> -->
+// <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
+  
+// <div id="chartDiv" class="PieChart" style="height: 300px;width:100%;">
+//       <svg></svg>
+// </div>

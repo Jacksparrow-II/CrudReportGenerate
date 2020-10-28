@@ -13,6 +13,7 @@ constructor(private http: HttpClient) {
   this.Visible = true;
  }
 
+
 Hide()
 {
   this.Visible = false;
