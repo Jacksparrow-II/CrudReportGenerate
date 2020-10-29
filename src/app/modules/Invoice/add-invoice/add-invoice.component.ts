@@ -1,5 +1,6 @@
 import { Inv } from './../../../Models/Invoice';
 import { InvoiceService } from './../../../Services/invoice.service';
+import { CustomerService } from './../../../Services/customer.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class AddInvoiceComponent implements OnInit {
 
   form = new FormGroup({
-    invoiceNo: new FormControl('',Validators.required),
+    invoiceNo: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)]),
     customerNo: new FormControl('',Validators.required),
     invoiceDate: new FormControl('',Validators.required),
     invoiceAmount: new FormControl('',Validators.required)
@@ -22,10 +23,14 @@ export class AddInvoiceComponent implements OnInit {
 
   Inv: Inv = new Inv ();
   message:any;   
+  Customer:any;   
+  TodayDate :any;
 
-  constructor(private http: HttpClient,private invoiceService: InvoiceService,private toastr: ToastrService,public router: Router) { }
+  constructor(private http: HttpClient,private customerService: CustomerService,private invoiceService: InvoiceService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
+    this.TodayDate  =new Date();
+    this.Customer=this.customerService.GetCustomer().subscribe((data)=>this.Customer=data)
   }
 
   // Add Invoice

@@ -14,8 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class AddCustomerComponent implements OnInit {
 
   form = new FormGroup({
-    customerNo: new FormControl('',Validators.required),
-    customerName: new FormControl('',[Validators.required])
+    customerNo: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)]),
+    customerName: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)])
   })
 
   Cust: Cust = new Cust ();

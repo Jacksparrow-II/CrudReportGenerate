@@ -56,11 +56,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div class="form-group">
-                                        <label>gender</label>
-                                        <input type="gender" id="gender" name="gender"  class="form-control" placeholder="gender" [(ngModel)]="formModel.gender">
-                                    </div> -->
-
                                     <div class="form-group">
                                         <label>Gender</label>
                                           <div class="form-group">
@@ -80,8 +75,8 @@
                                     </div>
 
 
-                                    <div>
-                                      <label>usertype</label>
+                                    <div class="form-group">
+                                      <label>User Type</label>
                                       <select class="browser-default custom-select mb-4" name="usertype" [(ngModel)]="Registration.usertype" formControlName="usertype" [ngClass]="{'is-invalid':
                                       form.get('usertype').touched && form.get('usertype').invalid}">
                                       <option disabled label="--select something --"></option>
@@ -90,6 +85,9 @@
                                       <option value="Commercial">Commercial</option>
                                       <option value="Business">Business</option>
                                       </select>
+                                      <div *ngIf="form.get('usertype').touched && form.get('usertype').invalid" class="invalid-feedback">
+                                        <div *ngIf="form.get('usertype').errors.required">Input is required </div>
+                                      </div>
                                     </div>
 
                                     <div class="form-group">
@@ -110,17 +108,6 @@
                                         </div>
                                     </div> -->
 
-
-                                    <div class="form-group">
-                                        <label>
-        										<!-- <input type="checkbox"> Remember Me -->
-                                        </label>
-                                        
-                                        <label class="pull-right">
-                                            <a href="#">Forgotten Password?</a>
-        								</label>
-
-                                    </div>
                                     <button name="submit_reg" value="Register"  type="submit" [disabled]="!form.valid"  (click)="registerNow()" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign Up</button>
                                     <div class="register-link m-t-15 text-center">
                                         <p>Already have account ? <a routerLink = "/Login"> Sign in</a></p>

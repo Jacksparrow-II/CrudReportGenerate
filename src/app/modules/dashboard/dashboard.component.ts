@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   value: any;
   DisplayBarChart: any;
   DisplayPieChart: any;
+  DisplayBarChart1: any;
 
   public charts: {
     title: string;
@@ -41,11 +42,26 @@ export class DashboardComponent implements OnInit {
     title1: 'Display Pie Chart',
     type: ChartType.BarChart,
     type1: ChartType.PieChart,
+    type2: ChartType.BarChart,
     data: [ ],
     columns: ['Element', 'Density'],
     options: {  
+      isStacked:true,
+      is3D:true,
       'width':510,
       'height':400,
+      animation: {
+        colors: ['#a52714', '#0000ff', '#ff0000', '#00ff00'],
+        duration: 2000,
+        easing: 'ease-in-out',
+        startup: true
+      }
+    },
+    options1: {  
+      isStacked:true,
+      is3D:true,
+      'width':450,
+      'height':255,
       animation: {
         colors: ['#a52714', '#0000ff', '#ff0000', '#00ff00'],
         duration: 2000,
@@ -68,7 +84,7 @@ export class DashboardComponent implements OnInit {
   {
     this.value = this.reportsService.GetDashboardDetails().subscribe((data) => { this.value=data
       this.DisplayBarChart=[['Sales',this.value[0].totalSales],['Pay Collection',this.value[0].totalPayCollection]];
-    //  this.DisplayBarChart=[['Sales',this.value[0].totalSales],['Pay Collection',this.value[0].totalSales]];
+      this.DisplayBarChart1=[['Due Payments',(this.value[0].totalSales-this.value[0].totalPayCollection)],['Pay Collection',this.value[0].totalPayCollection]];
    
       this.DisplayPieChart=[['Due Payments',(this.value[0].totalSales-this.value[0].totalPayCollection)],['Pay Collection',this.value[0].totalPayCollection]];
       //console.log(this.DisplayBarChart);

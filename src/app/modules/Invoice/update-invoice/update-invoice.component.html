@@ -50,7 +50,7 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Invoice Date</label>
                                             <div class="col-md-9">
-                                                <input type="date" class="form-control" id="invoiceDate" [(ngModel)]="Inv.invoiceDate" name="invoiceDate"  class="form-control my-input" formControlName="invoiceDate" [ngClass]="{'is-invalid':
+                                                <input type="date" class="form-control" id="invoiceDate" [(ngModel)]="Inv.invoiceDate" [ngModel]="Inv.invoiceDate  | date:'yyyy-MM-dd'" name="invoiceDate"  class="form-control my-input" formControlName="invoiceDate" [ngClass]="{'is-invalid':
                                                 form.get('invoiceDate').touched && form.get('invoiceDate').invalid}">
                                             <div *ngIf="form.get('invoiceDate').touched && form.get('invoiceDate').invalid" class="invalid-feedback">
                                                 <div *ngIf="form.get('invoiceDate').errors.required">Input is required </div>

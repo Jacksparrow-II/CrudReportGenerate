@@ -18,7 +18,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 export class AddPaymentComponent implements OnInit {
 
   form = new FormGroup({
-    paymentNo: new FormControl('',Validators.required),
+    paymentNo: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)]),
     invoiceNo: new FormControl('',Validators.required),
     paymentDate: new FormControl('',Validators.required),
     paymentAmount: new FormControl('',Validators.required)
@@ -31,11 +31,13 @@ export class AddPaymentComponent implements OnInit {
   temp : any;
   depList : any;
   show:boolean=false;
+  TodayDate :any;
 
   constructor(private http: HttpClient,private invoiceService: InvoiceService,private paymentService: PaymentService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
     //this.Invoice=this.paymentService.GetInvoiceDetailsByNo(this.Pay.invoiceNo).subscribe((data)=>this.Invoice=data);    
+    this.TodayDate  =new Date();
     this.depList=this.invoiceService.GetInvoice().subscribe((data)=>this.depList=data);
 
   }

@@ -17,63 +17,8 @@
     <!-- Container fluid  -->
     <div class="container-fluid" *ngFor="let list of dispname">
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card bg-primary p-30">
-                            <div class="media widget-ten">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="ti-bag f-s-40"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2 class="color-white">278</h2>
-                                    <p class="m-b-0">New Posts</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-warning p-30">
-                            <div class="media widget-ten">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="ti-comment f-s-40"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2 class="color-white">278</h2>
-                                    <p class="m-b-0">New Comment</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-success p-30">
-                            <div class="media widget-ten">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="ti-vector f-s-40"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2 class="color-white">80 %</h2>
-                                    <p class="m-b-0">Growth Rate</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-danger p-30">
-                            <div class="media widget-ten">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="ti-location-pin f-s-40"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2 class="color-white">278</h2>
-                                    <p class="m-b-0">Total Visitor</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        <!-- Start Page Content -->
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
@@ -87,7 +32,7 @@
                 </div>
             </div>
             
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
@@ -100,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card p-30">
                     <div class="media">
                         <div class="media-left meida media-middle">
@@ -109,19 +54,6 @@
                         <div class="media-body media-text-right">
                             <h2>${{ list.totalPayCollection }}</h2>
                             <p class="m-b-0">Payment Collection</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-30">
-                    <div class="media">
-                        <div class="media-left meida media-middle">
-                            <span><i class="fa fa-grav f-s-40 color-black"></i></span>
-                        </div>
-                        <div class="media-body media-text-right">
-                            <h2>25</h2>
-                            <p class="m-b-0">Client</p>
                         </div>
                     </div>
                 </div>
@@ -158,140 +90,53 @@
 
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body browser">
+                            <google-chart 
+                                #chart
+                                width="500"
+                                [title]="DisplayChart.title"
+                                [type]="DisplayChart.type2"
+                                [data]="DisplayBarChart1"
+                                [columns]="DisplayChart.columns"
+                                [options]="DisplayChart.options1" >
+                            </google-chart>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body browser">
                                 <p class="f-w-600">Customer <span class="pull-right">{{ list.totalCustomer }}</span></p>
                                 <div class="progress ">
-                                    <div role="progressbar" style="width: 85%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
+                                    <div role="progressbar" style="width: 25%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
                                 </div>
         
                                 <p class="m-t-30 f-w-600">Invoice Generated<span class="pull-right">{{ list.totalInvoice }}</span></p>
                                 <div class="progress">
-                                    <div role="progressbar" style="width: 90%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
+                                    <div role="progressbar" style="width: 30%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
                                 </div>
         
                                 <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSales }}</span></p>
                                 <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                                    <div role="progressbar" style="width: 53%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
         
                                 <p class="m-t-30 f-w-600">Total Revenue<span class="pull-right">${{ list.totalPayCollection }}</span></p>
                                 <div class="progress">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-        
-                                <p class="m-t-30 f-w-600">Store<span class="pull-right">25</span></p>
-                                <div class="progress m-b-30">
-                                    <div role="progressbar" style="width: 65%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">40% Complete</span> </div>
+                                    <div role="progressbar" style="width: 47%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
-                <!-- /# column -->
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-title">
-                            <h4>Message </h4>
-                        </div>
-                        <div class="recent-comment">
-                            <div class="media">
-                                <div class="media-left">
-                                    <a ><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a ><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media">
-                                <div class="media-left">
-                                    <a ><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">john doe</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <p class="comment-date">October 21, 2018</p>
-                                </div>
-                            </div>
-
-                            <div class="media no-border">
-                                <div class="media-left">
-                                    <a ><img alt="..." src="assets/images/avatar/1.jpg" class="media-object"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mr. Michael</h4>
-                                    <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                    <div class="comment-date">October 21, 2018</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# card -->
-                </div>
-            </div>
         </div>
+        </div> 
 
-    <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Todo</h4>
-                        <div class="card-content">
-                            <div class="todo-list">
-                                <div class="tdl-holder">
-                                    <div class="tdl-content">
-                                        <ul>
-                                            <li>
-                                                <label>
-                      <input type="checkbox"><i class="bg-primary"></i><span>Build an angular app</span>
-                      <a  class="ti-close"></a>
-                    </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                      <input type="checkbox" checked><i class="bg-success"></i><span>Creating component page</span>
-                      <a  class="ti-close"></a>
-                    </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                      <input type="checkbox" checked><i class="bg-warning"></i><span>Follow back those who follow you</span>
-                      <a  class="ti-close"></a>
-                    </label>
-                                            </li>
-
-                                            <li>
-                                                <label>
-                      <input type="checkbox" checked><i class="bg-success"></i><span>Creating component page</span>
-                      <a class="ti-close"></a>
-                    </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <input type="text" class="tdl-new form-control" placeholder="Type here">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End PAge Content -->
+        <!-- End Page Content -->
     </div>
     <!-- End Container fluid  -->
     <!-- footer -->

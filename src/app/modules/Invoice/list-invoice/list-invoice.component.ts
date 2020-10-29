@@ -53,6 +53,7 @@ export class ListInvoiceComponent implements OnInit {
         columns: [
           { data: 'invoiceNo'},
           { data: 'customerNo'},
+          { data: 'customerName'},
           { data: 'invoiceDate' ,
           render: function(data, type, row){
                 if(type === "sort" || type === "type"){

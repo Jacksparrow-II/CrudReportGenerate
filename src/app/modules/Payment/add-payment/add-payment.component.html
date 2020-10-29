@@ -34,11 +34,12 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Payment No</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" id="paymentNo" [(ngModel)]="Pay.paymentNo" name="paymentNo"  placeholder="Payment Number" formControlName="paymentNo" [ngClass]="{'is-invalid':form.get('paymentNo').touched && form.get('paymentNo').invalid}" >
-                                                <div class="invalid-feedback">
-                                                    <div>Input is required </div>
+                                                <input type="text" class="form-control" id="paymentNo" [(ngModel)]="Pay.paymentNo" name="paymentNo"  placeholder="Payment Number" formControlName="paymentNo" 
+                                                [ngClass]="{'is-invalid':form.get('paymentNo').touched && form.get('paymentNo').invalid}">
+                                                <div *ngIf="form.get('paymentNo').touched && form.get('paymentNo').invalid" class="invalid-feedback">
+                                                    <div *ngIf="form.get('paymentNo').errors.required">Input is required </div>
+                                                    <div *ngIf="form.get('paymentNo').errors.pattern">Remove Whitespace </div>
                                                 </div>
-                                                <!-- <small class="form-control-feedback">Example : CT00001</small>  -->
                                             </div>
                                         </div>
 
@@ -65,6 +66,9 @@
                                                             <td>Customer No</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.customerNo}}</td>
                                                         </tr>
                                                         <tr>    
+                                                            <td>Customer Name</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.customerName}}</td>
+                                                        </tr>
+                                                        <tr>    
                                                             <td>Invoice Date</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceDate | date :"dd-MMM-yy"}}</td>
                                                         </tr>
                                                         <tr>    
@@ -82,7 +86,7 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Payment Date</label>
                                             <div class="col-md-9">
-                                                <input type="date" id="paymentDate" [(ngModel)]="Pay.paymentDate" name="paymentDate" class="form-control" formControlName="paymentDate" [ngClass]="{'is-invalid':
+                                                <input type="date" id="paymentDate" [(ngModel)]="Pay.paymentDate" [ngModel]=" TodayDate  | date:'yyyy-MM-dd'" name="paymentDate" class="form-control" formControlName="paymentDate" [ngClass]="{'is-invalid':
                                                 form.get('paymentDate').touched && form.get('paymentDate').invalid}">
                                                 <div *ngIf="form.get('paymentDate').touched && form.get('paymentDate').invalid" class="invalid-feedback">
                                                     <div *ngIf="form.get('paymentDate').errors.required">Input is required </div>

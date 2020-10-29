@@ -40,7 +40,7 @@
 
                                     <div class="form-group">
                                         <label>dob</label>
-                                        <input type="date" id="dob" name="dob"  class="form-control" placeholder="dob" formControlName="dob" [(ngModel)]="EdtPro1.dob" [ngClass]="{'is-invalid':
+                                        <input type="date" id="dob" name="dob"  class="form-control" placeholder="dob" formControlName="dob" [(ngModel)]="EdtPro1.dob" [ngModel]="EdtPro1.dob  | date:'yyyy-MM-dd'" [ngClass]="{'is-invalid':
                                         form.get('dob').touched && form.get('dob').invalid}">
                                         <div *ngIf="form.get('dob').touched && form.get('dob').invalid" class="invalid-feedback">
                                             <div *ngIf="form.get('dob').errors.required">Input is required </div>
