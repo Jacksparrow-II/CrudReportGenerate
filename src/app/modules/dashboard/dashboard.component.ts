@@ -38,11 +38,12 @@ export class DashboardComponent implements OnInit {
 }
 
   public DisplayChart = {
-    title: 'Display Bar Chart',
-    title1: 'Display Pie Chart',
-    type: ChartType.BarChart,
+    title1: 'Display Column Chart of Sales and Payment Collection',
+    title2: 'Display Pie Chart of Due Payments and Payment Collection',
+    title3: 'Display Line Chart of Due Payments and Payment Collection',
+    type: ChartType.ColumnChart,
     type1: ChartType.PieChart,
-    type2: ChartType.BarChart,
+    type2: ChartType.LineChart  ,
     data: [ ],
     columns: ['Element', 'Density'],
     options: {  

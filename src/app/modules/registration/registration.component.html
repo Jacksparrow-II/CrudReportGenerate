@@ -59,7 +59,7 @@
                                     <div class="form-group">
                                         <label>Gender</label>
                                           <div class="form-group">
-                                              <input type="radio" [(ngModel)]="Registration.gender" name="gender" value="Male" formControlName="gender" [ngClass]="{'is-invalid':
+                                              <input checked type="radio" [(ngModel)]="Registration.gender" checked name="gender" value="Male" formControlName="gender" [ngClass]="{'is-invalid':
                                               form.get('gender').touched && form.get('gender').invalid}">
                                               <div class="invalid-feedback">
                                                   <div>Input is required </div>

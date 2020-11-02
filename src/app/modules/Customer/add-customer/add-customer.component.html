@@ -32,7 +32,7 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Customer No</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" id="CustomerNo" [(ngModel)]="Cust.customerNo" name="customerNo" placeholder="Customer Number" formControlName="customerNo" 
+                                                <input type="text" class="form-control" id="CustomerNo" [(ngModel)]="Cust.customerNo" [ngModel]="Val[0].customerNo" name="customerNo" placeholder="Customer Number" formControlName="customerNo" 
                                                 [ngClass]="{'is-invalid':form.get('customerNo').touched && form.get('customerNo').invalid}">
                                                 <div *ngIf="form.get('customerNo').touched && form.get('customerNo').invalid" class="invalid-feedback">
                                                     <div *ngIf="form.get('customerNo').errors.required">Input is required </div>

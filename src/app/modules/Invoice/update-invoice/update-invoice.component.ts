@@ -40,8 +40,19 @@ export class UpdateInvoiceComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  //Update Invoice
   public Updatedata(){
+    if(this.Inv.invoiceAmount <= 0)
+    {
+      this.toastr.warning("Please Enter Invoice Amount Greater Than 0");
+    }
+    else
+    {
+      this.UpdateInvoiceDetails();
+    }
+  }
+
+  //Update Invoice
+  public UpdateInvoiceDetails(){
     {
 
       this.Inv.modifyBy = localStorage.getItem('firstName');

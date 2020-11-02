@@ -85,6 +85,22 @@ export class InvoiceService {
     )
   }  
 
+  AutoIncreamnet() {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Invoice/AutoIncrementInvoiceNo", {headers :tokenHeader })
+    .pipe(
+      tap(
+        succ => { },
+        err =>  {
+          if (err.status == 401){
+            this.ClearLocalStorage();
+          }
+        }
+
+      )
+    )
+   } 
+
   GetById(invoiceNo:string): Observable<any> { 
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') }) 
     return this.http.get(environment.apiBaseURI + "/api/Invoice/InvoiceById/" + invoiceNo, {headers :tokenHeader })

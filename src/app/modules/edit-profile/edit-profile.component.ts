@@ -15,8 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 export class EditProfileComponent implements OnInit {
 
   form = new FormGroup({
-    firstName: new FormControl('',Validators.required),
-    lastName: new FormControl('',Validators.required),
+    firstName: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)]),
+    lastName: new FormControl('',[Validators.required,Validators.pattern(/^\S*$/)]),
     userName: new FormControl('',[Validators.required, Validators.email]),
     //password: new FormControl('',Validators.required),
     dob: new FormControl('',Validators.required),

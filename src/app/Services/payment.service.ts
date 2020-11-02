@@ -85,6 +85,22 @@ export class PaymentService {
     )
   }  
 
+  AutoIncreamnet() {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Payment/AutoIncrementPaymentNo", {headers :tokenHeader })
+    .pipe(
+      tap(
+        succ => { },
+        err =>  {
+          if (err.status == 401){
+            this.ClearLocalStorage();
+          }
+        }
+
+      )
+    )
+   } 
+
   GetById(paymentNo:string): Observable<any> { 
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })  
     return this.http.get(environment.apiBaseURI + "/api/Payment/PaymentById/" + paymentNo, {headers :tokenHeader })

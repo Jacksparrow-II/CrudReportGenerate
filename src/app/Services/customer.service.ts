@@ -84,6 +84,22 @@ export class CustomerService {
     )
   }  
 
+  AutoIncreamnet() {   
+    var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
+    return this.http.get(environment.apiBaseURI + "/api/Customer/AutoIncrementCustomerNo", {headers :tokenHeader })
+    .pipe(
+      tap(
+        succ => { },
+        err =>  {
+          if (err.status == 401){
+            this.ClearLocalStorage();
+          }
+        }
+
+      )
+    )
+   } 
+
   GetById(customerNo:string): Observable<any> { 
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
     return this.http.get(environment.apiBaseURI + "/api/Customer/CustomerById/" + customerNo, {headers :tokenHeader })

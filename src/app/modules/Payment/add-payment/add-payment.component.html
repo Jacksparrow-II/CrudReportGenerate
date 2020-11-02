@@ -34,7 +34,7 @@
                                         <div class="form-group row">
                                             <label class="control-label text-right col-md-2">Payment No</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" id="paymentNo" [(ngModel)]="Pay.paymentNo" name="paymentNo"  placeholder="Payment Number" formControlName="paymentNo" 
+                                                <input type="text" class="form-control" id="paymentNo" [(ngModel)]="Pay.paymentNo" [ngModel]="Val[0].paymentNo" name="paymentNo"  placeholder="Payment Number" formControlName="paymentNo" 
                                                 [ngClass]="{'is-invalid':form.get('paymentNo').touched && form.get('paymentNo').invalid}">
                                                 <div *ngIf="form.get('paymentNo').touched && form.get('paymentNo').invalid" class="invalid-feedback">
                                                     <div *ngIf="form.get('paymentNo').errors.required">Input is required </div>
@@ -72,7 +72,10 @@
                                                             <td>Invoice Date</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceDate | date :"dd-MMM-yy"}}</td>
                                                         </tr>
                                                         <tr>    
-                                                            <td>Invoice Amount</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceAmount}}</td>
+                                                            <td>Invoice Amount</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceAmount | currency }}</td>
+                                                        </tr>
+                                                        <tr>    
+                                                            <td>Payment Due Amount</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceAmount - Pay.paymentAmount | currency }}</td>
                                                         </tr>
                                                         <tr>    
                                                             <td>Payment DueDate</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.paymentDueDate | date :"dd-MMM-yy"}}</td>
@@ -112,7 +115,7 @@
                                             <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="offset-sm-3 col-md-9">
-                                                        <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="registerNow()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
+                                                        <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="Adddata()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
                                                         <button type="button" class="btn-rounded btn-inverse" (click)="ClearData()">Cancel</button>
                                                     </div>
                                                 </div>

@@ -32,14 +32,29 @@ export class AddPaymentComponent implements OnInit {
   depList : any;
   show:boolean=false;
   TodayDate :any;
+  paymentNo : string;
+  old : any;
+  Val: any;
 
   constructor(private http: HttpClient,private invoiceService: InvoiceService,private paymentService: PaymentService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
-    //this.Invoice=this.paymentService.GetInvoiceDetailsByNo(this.Pay.invoiceNo).subscribe((data)=>this.Invoice=data);    
+    this.AutoIncreamnet();
     this.TodayDate  =new Date();
+    this.Pay.paymentAmount = 0;
     this.depList=this.invoiceService.GetInvoice().subscribe((data)=>this.depList=data);
 
+  }
+
+  public Adddata(){
+    if(this.Pay.paymentAmount <= 0)
+    {
+      this.toastr.warning("Please Enter Invoice Amount Greater Than 0");
+    }
+    else
+    {
+      this.registerNow();
+    }
   }
 
   public addpayment(){
@@ -48,7 +63,7 @@ export class AddPaymentComponent implements OnInit {
 
       let resp=this.paymentService.AddPayment(this.Pay);resp.subscribe((data)=>{this.message=(data)
       
-      if(this.message == 1)
+      if(this.message >= 1)
       {
         this.gotoList()
         this.toastr.success("Your record added Sucessfully!");
@@ -72,6 +87,7 @@ export class AddPaymentComponent implements OnInit {
      this.show=true;
    }
   }
+  
   registerNow(){
   //  this.abs();
     this.registerNow1();
@@ -112,10 +128,13 @@ export class AddPaymentComponent implements OnInit {
   }
 
 
-
   gotoList() {
     // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
     this.router.navigate(["/ListPayment"]);
+  }
+
+  AutoIncreamnet() {
+    this.Val = this.paymentService.AutoIncreamnet().subscribe((data)=>this.Val=data) 
   }
 
   ClearData() {

@@ -64,10 +64,16 @@
                                                             <td>Customer No</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.customerNo}}</td>
                                                         </tr>
                                                         <tr>    
+                                                            <td>Customer Name</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.customerName}}</td>
+                                                        </tr>
+                                                        <tr>    
                                                             <td>Invoice Date</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceDate | date :"dd-MMM-yy"}}</td>
                                                         </tr>
                                                         <tr>    
                                                             <td>Invoice Amount</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceAmount}}</td>
+                                                        </tr>
+                                                        <tr>    
+                                                            <td>Payment Due Amount</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.invoiceAmount - Pay.paymentAmount}}</td>
                                                         </tr>
                                                         <tr>    
                                                             <td>Payment DueDate</td>&nbsp;&nbsp;<td>:</td>&nbsp;&nbsp;<td>{{list.paymentDueDate | date :"dd-MMM-yy"}}</td>
@@ -107,7 +113,7 @@
                                             <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="offset-sm-3 col-md-9">
-                                                        <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="Updatedata()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
+                                                        <button type="submit" class="btn-rounded btn-success" value="Register" [disabled]="!form.valid" (click)="Adddata()" > <i class="fa fa-check"></i> Submit</button>&nbsp;&nbsp;&nbsp;
                                                         <!-- <button type="button" class="btn-rounded btn-inverse">Cancel</button> -->
                                                     </div>
                                                 </div>

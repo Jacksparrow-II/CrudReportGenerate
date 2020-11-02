@@ -20,12 +20,15 @@ export class AddCustomerComponent implements OnInit {
 
   Cust: Cust = new Cust ();
   message:any;  
+  Val : any;
+
 
   constructor(private http: HttpClient,private customerService: CustomerService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
-  
+    this.AutoIncreamnet();
   }
+
 //Add Customer
   public registerNow(){
     {
@@ -33,7 +36,7 @@ export class AddCustomerComponent implements OnInit {
       this.Cust.createdBy = localStorage.getItem('firstName');
 
       let resp=this.customerService.AddCustomer(this.Cust);resp.subscribe((data)=>{this.message=(data)
-        if(this.message == 1)
+        if(this.message >= 1)
       {
         this.gotoList()
         this.toastr.success("Your record added Sucessfully!");
@@ -53,6 +56,10 @@ export class AddCustomerComponent implements OnInit {
 // Go To List
   gotoList() {
     this.router.navigate(["/ListCustomer"]);
+  }
+
+  AutoIncreamnet() {
+    this.Val = this.customerService.AutoIncreamnet().subscribe((data)=>this.Val=data) 
   }
 
 // Clear Form Data

@@ -25,12 +25,25 @@ export class AddInvoiceComponent implements OnInit {
   message:any;   
   Customer:any;   
   TodayDate :any;
+  Val: any;
 
   constructor(private http: HttpClient,private customerService: CustomerService,private invoiceService: InvoiceService,private toastr: ToastrService,public router: Router) { }
 
   ngOnInit(): void {
+    this.AutoIncreamnet();
     this.TodayDate  =new Date();
     this.Customer=this.customerService.GetCustomer().subscribe((data)=>this.Customer=data)
+  }
+
+  public AddInvoice(){
+    if(this.Inv.invoiceAmount <= 0)
+    {
+      this.toastr.warning("Please Enter Invoice Amount Greater Than 0");
+    }
+    else
+    {
+      this.AddInvoiceDetails();
+    }
   }
 
   // Add Invoice
@@ -40,7 +53,7 @@ export class AddInvoiceComponent implements OnInit {
 
       let resp=this.invoiceService.AddInvoice(this.Inv);resp.subscribe((data)=>{this.message=(data)
       
-        if(this.message == 1)
+        if(this.message >= 1)
       {
         this.gotoList()
         this.toastr.success("Your record added Sucessfully!");
@@ -60,6 +73,10 @@ export class AddInvoiceComponent implements OnInit {
   gotoList() {
     // this.router.navigateByUrl('/List-Employee', { skipLocationChange: true });
     this.router.navigate(["/ListInvoice"]);
+  }
+
+  AutoIncreamnet() {
+    this.Val = this.invoiceService.AutoIncreamnet().subscribe((data)=>this.Val=data) 
   }
 
   ClearData() {

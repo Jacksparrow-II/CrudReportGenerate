@@ -32,6 +32,7 @@ export class UpdatePaymentComponent implements OnInit {
   Invoice : any;
   temp : any;
   depList : any;
+  old : any;
   show:boolean=false;
 
   constructor(private http: HttpClient,private invoiceService: InvoiceService,private paymentService: PaymentService,private toastr: ToastrService,public route: ActivatedRoute,public router: Router) { }
@@ -42,15 +43,30 @@ export class UpdatePaymentComponent implements OnInit {
 
     this.desobj = new Pay();
     this.paymentNo = this.route.snapshot.params['paymentNo'];
+    this.GetPaymentById();
 
     this.paymentService.GetById(this.paymentNo)
       .subscribe(data => {
         console.log(data)
         this.Pay = data;
-      }, error => console.log(error));
-
-    
+        this.Invoice=this.paymentService.GetInvoiceDetailsByNo(this.Pay.invoiceNo).subscribe((data)=>this.Invoice=data); 
+        if( this.Pay.invoiceNo != undefined)
+        {
+          this.show=true;
+        }
+      }, error => console.log(error));    
       
+  }
+
+  public Adddata(){
+    if(this.Pay.paymentAmount <= 0)
+    {
+      this.toastr.warning("Please Enter Invoice Amount Greater Than 0");
+    }
+    else
+    {
+      this.registerNow();
+    }
   }
 
   public Updatedata(){
@@ -93,10 +109,8 @@ export class UpdatePaymentComponent implements OnInit {
 
   public registerNow1() {
 
-    
-
     console.log(this.Invoice[0].invoiceAmount)
-    this.DuePayment=(this.Invoice[0].invoiceAmount - this.Invoice[0].paymentAmount);
+    this.DuePayment=(this.Invoice[0].invoiceAmount - this.Invoice[0].paymentAmount) + this.old.paymentAmount;
     if(this.DuePayment < this.Pay.paymentAmount)
     {
       Swal.fire({
@@ -125,6 +139,12 @@ export class UpdatePaymentComponent implements OnInit {
 
   }
 
+  GetPaymentById(){  
+    this.paymentService.GetById(this.paymentNo)
+    .subscribe(data => {
+      this.old = data;
+     }); 
+    }
 
    gotoList() {
      this.router.navigateByUrl('/ListPayment', { skipLocationChange: true });
