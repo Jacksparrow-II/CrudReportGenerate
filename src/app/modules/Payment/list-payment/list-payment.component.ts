@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import * as XLSX from 'xlsx'; 
 
 declare var $;
 declare var jQuery;
@@ -34,6 +35,21 @@ export class ListPaymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.gedDatafromsource();
+  }
+
+  fileName = 'List_of_Payment.xlsx';
+
+  exportexcel()
+  { 
+
+     let element = document.getElementById('table_Payment'); 
+     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+     const wb: XLSX.WorkBook = XLSX.utils.book_new();
+     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+     XLSX.writeFile(wb, this.fileName);
+    
   }
 
   gedDatafromsource(){

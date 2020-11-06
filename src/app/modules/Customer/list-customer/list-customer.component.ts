@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import * as XLSX from 'xlsx'; 
 
 declare var $;
 declare var jQuery;
@@ -31,6 +32,19 @@ export class ListCustomerComponent implements OnInit {
     this.reloadData();
     this.gedDatafromsource();
   }
+  fileName= 'List_of_Customer.xlsx';  
+
+  exportexcel()
+    { 
+       let element = document.getElementById('table_Customer'); 
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+       const wb: XLSX.WorkBook = XLSX.utils.book_new();
+       XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+       XLSX.writeFile(wb, this.fileName);
+			
+    }
 
   reloadData() {
     this.customerService.GetCustomer()
@@ -43,10 +57,11 @@ export class ListCustomerComponent implements OnInit {
      this.customerService.GetCustomer().subscribe(data => {
 
       this.TableData = data;
+
+      
       var r=$('#table_Customer').DataTable({
 
         data: this.TableData,
-
         columns: [
           { data: 'customerNo'},
           { data: 'customerName'}, 
@@ -57,6 +72,7 @@ export class ListCustomerComponent implements OnInit {
             orderable: false,
           },
         ],
+
       });
 
 

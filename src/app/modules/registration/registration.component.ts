@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
     dob: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
     usertype: new FormControl('',Validators.required),
-    //region: new FormControl('',Validators.required)
+    region: new FormControl('',Validators.required)
   }) 
 
   Registration: Registration = new Registration ();

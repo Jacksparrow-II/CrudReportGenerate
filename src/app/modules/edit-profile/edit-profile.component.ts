@@ -21,8 +21,8 @@ export class EditProfileComponent implements OnInit {
     //password: new FormControl('',Validators.required),
     dob: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
-    usertype: new FormControl('',Validators.required)
-    //region: new FormControl('',Validators.required)
+    usertype: new FormControl('',Validators.required),
+    region: new FormControl('',Validators.required)
   })
 
   EdtPro1: EdtPro = new EdtPro ();

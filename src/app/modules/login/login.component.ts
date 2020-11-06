@@ -15,10 +15,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  // form = new FormGroup({
-  //   userName: new FormControl('',[Validators.required, Validators.email]),
-  //   password: new FormControl('',Validators.required)
-  // })
+  form = new FormGroup({
+    userName: new FormControl('',[Validators.required, Validators.email]),
+    password: new FormControl('',Validators.required)
+  })
 
   formModel = {
     userName: '',
@@ -43,8 +43,8 @@ export class LoginComponent implements OnInit {
     this.gotoList();
   }
 
-  onSubmit(form: NgForm) {
-    this.loginService.Login(form.value).subscribe(
+  onSubmit() {
+    this.loginService.Login(this.formModel).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
         localStorage.setItem('firstName', res.firstName);

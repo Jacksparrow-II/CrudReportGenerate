@@ -79,7 +79,7 @@
                                       <label>User Type</label>
                                       <select class="browser-default custom-select mb-4" name="usertype" [(ngModel)]="Registration.usertype" formControlName="usertype" [ngClass]="{'is-invalid':
                                       form.get('usertype').touched && form.get('usertype').invalid}">
-                                      <option disabled label="--select something --"></option>
+                                      <option disabled label="Select something"></option>
                                       <option value="Admin">Admin</option>
                                       <option value="SuperAdmin">SuperAdmin</option>
                                       <option value="Commercial">Commercial</option>
@@ -90,23 +90,22 @@
                                       </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label>Region</label>
                                         <div *ngFor="let Reg1 of Regions">                                        
                                             <input type="checkbox"  value="{{Reg1.key}}" (change)= "onCheckboxChange($event)" />
                                             {{Reg1.value}}
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
-                                    <!-- <div class="form-group" *ngFor="let Reg of Regions; let i=index">
-                                        <label>region</label>
-                                        <input type="checkbox" id="region" name="region" value="{{Reg.key}}" (change)= onCheckboxChange($event) class="form-control" placeholder="region" formControlName="region" [(ngModel)]="Reg.region" [ngClass]="{'is-invalid':
+                                    <div class="form-group">
+                                        <label>Region</label>
+                                        <input type="regionname" id="region" name="region"  class="form-control" placeholder="Region"  formControlName="region" [(ngModel)]="Registration.region" [ngClass]="{'is-invalid':
                                         form.get('region').touched && form.get('region').invalid}">
-                                        {{Reg.value}}
                                         <div class="invalid-feedback">
                                             <div>Input is required </div>
                                         </div>
-                                    </div> -->
+                                    </div>
 
                                     <button name="submit_reg" value="Register"  type="submit" [disabled]="!form.valid"  (click)="registerNow()" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign Up</button>
                                     <div class="register-link m-t-15 text-center">

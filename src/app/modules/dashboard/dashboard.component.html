@@ -62,7 +62,6 @@
         </div>
 
         <div class="row bg-white m-l-0 m-r-0 box-shadow ">
-            
             <google-chart 
                 #chart
                 width="600"
@@ -82,66 +81,63 @@
                 [columns]="DisplayChart.columns"
                 [options]="DisplayChart.options" >
             </google-chart>
+        </div>
 
-            <!-- column -->
-           
-            <!-- column -->
+        <div class="row bg-white m-l-0 m-r-0 box-shadow ">
+            <google-chart 
+            #chart
+            width="600"
+            [title]="DisplayChart.title4"
+            [type]="DisplayChart.type"
+            [data]="sdk"
+            [columns]="DisplayChart.columns"
+            [options]="DisplayChart.options" >
+        </google-chart>
+
+        <google-chart 
+        #chart
+        width="600"
+        [title]="DisplayChart.title5"
+        [type]="DisplayChart.type"
+        [data]="sdk1"
+        [columns]="DisplayChart.columns"
+        [options]="DisplayChart.options" >
+    </google-chart>
         </div>
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body browser">
-                            <google-chart 
-                                #chart
-                                width="500"
-                                [title]="DisplayChart.title3"
-                                [type]="DisplayChart.type2"
-                                [data]="DisplayBarChart1"
-                                [columns]="DisplayChart.columns"
-                                [options]="DisplayChart.options1" >
-                            </google-chart>
-                            </div>
-                        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body browser">
+                    <p class="f-w-600">Customer <span class="pull-right">{{ list.totalCustomer }}</span></p>
+                    <div class="progress ">
+                        <div role="progressbar" style="width: 25%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body browser">
-                                <p class="f-w-600">Customer <span class="pull-right">{{ list.totalCustomer }}</span></p>
-                                <div class="progress ">
-                                    <div role="progressbar" style="width: 25%; height:8px;" class="progress-bar bg-danger wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
-                                </div>
-        
-                                <p class="m-t-30 f-w-600">Invoice Generated<span class="pull-right">{{ list.totalInvoice }}</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 30%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
-                                </div>
-        
-                                <p class="m-t-30 f-w-600">Sales<span class="pull-right">${{ list.totalSales }}</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 53%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-        
-                                <p class="m-t-30 f-w-600">Total Revenue<span class="pull-right">${{ list.totalPayCollection }}</span></p>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 47%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-        </div>
-        </div> 
 
+                    <p class="m-t-30 f-w-600">Invoice Generated<span class="pull-right">{{ list.totalInvoice }}</span></p>
+                    <div class="progress">
+                        <div role="progressbar" style="width: 30%; height:8px;" class="progress-bar bg-info wow animated progress-animated"> <span class="sr-only">20% Complete</span> </div>
+                    </div>
+
+                    <p class="m-t-30 f-w-600">Total Sales<span class="pull-right">${{ list.totalSales }}</span></p>
+                    <div class="progress">
+                        <div role="progressbar" style="width: 53%; height:8px;" class="progress-bar bg-success wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                    </div>
+
+                    <p class="m-t-30 f-w-600">Total Payment<span class="pull-right">${{ list.totalPayCollection }}</span></p>
+                    <div class="progress">
+                        <div role="progressbar" style="width: 47%; height:8px;" class="progress-bar bg-warning wow animated progress-animated"> <span class="sr-only">60% Complete</span> </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
         <!-- End Page Content -->
     </div>
     <!-- End Container fluid  -->
-    <!-- footer -->
-    <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
-    <!-- End footer -->
+              <!-- footer -->
+              <footer class="footer"> © 2018 All rights reserved. Made by Nisarg Prajapati <a href="https://github.com/Jacksparrow-II">Jacksparrow-II</a></footer>
+              <!-- End footer -->
     <router-outlet></router-outlet>
 </div>
 

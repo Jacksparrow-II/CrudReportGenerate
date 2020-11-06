@@ -24,18 +24,22 @@
                           <div class="card">
                               <div class="card-body">
                                 <div class="text-center">
-                                  <!-- <button class="btn-rounded btn-success " data-toggle="tooltip" data-placement="top" title="Add new Payment" style=" text-align: center; float: right;" routerLink = "/AddPayment" name="submit_reg" value="Register" type="button">Add</button> -->
+                                  <button class="btn-rounded btn-success " style="cursor: pointer " (click)="exportexcel()" data-toggle="tooltip" data-placement="top" title="Export data to Excel" style=" text-align: center; float: right;"  type="button">Export to Excel</button>
                                 </div>
-                                  <h1 class="card-title">Reports</h1>
-                                  <!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
+                                <h1 class="card-title">Reports</h1>
                                   <div class="table-responsive m-t-40">
-                                      <table id="table_Report" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <div>
+                                      <div style=" text-align: center; float: right;">
+                                      </div>
+                                      <p id="table_ReportFilter" class="col-md-3 align-self-center"><label><b>Select Customer:</b></label><br></p>
+                                    </div>
+                                    <table id="table_Report" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>  
                                           <tr>  
                                             <th>Customer Name</th>
                                             <th>Invoice Month</th> 
                                             <th>No of Invoices</th>
-                                            <th>sales</th>                   
+                                            <th>sales</th>     
                                             <th>Pay Collection</th>
                                           </tr>  
                                       </thead>   

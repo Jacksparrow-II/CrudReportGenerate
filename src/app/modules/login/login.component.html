@@ -9,16 +9,28 @@
                         <div class="login-content card">
                             <div class="login-form">
                                 <h4>Login</h4>
-                                <form #form='ngForm' (submit)="onSubmit(form)">
+                                <form  [formGroup]="form">
                                     <div class="form-group">
+
                                         <label>Email address</label>
-                                        <input type="email" id="userName" name="userName"   class="form-control" placeholder="Email" [(ngModel)]="formModel.userName">
+                                        <input type="email" id="userName" name="userName"   class="form-control" placeholder="Email" formControlName="userName" [(ngModel)]="formModel.userName" [ngClass]="{'is-invalid':
+                                        form.get('userName').touched && form.get('userName').invalid}">
+                                        <div *ngIf="form.get('userName').touched && form.get('userName').invalid" class="invalid-feedback">
+                                            <div *ngIf="form.get('userName').errors.required">Input is required </div>
+                                            <div *ngIf="form.get('userName').errors.email">Email must be valid email address </div>
+                                        </div>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" id="password" name="password"  class="form-control" placeholder="password" [(ngModel)]="formModel.password">
+                                        <input type="password" id="password" name="password"  class="form-control" placeholder="password" formControlName="password" [(ngModel)]="formModel.password"  [ngClass]="{'is-invalid':
+                                        form.get('password').touched && form.get('password').invalid}">
+                                        <div class="invalid-feedback">
+                                            <div>Input is required </div>
+                                        </div>
                                     </div>
-                                    <button name="submit_reg" value="Register"  type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+
+                                    <button name="submit_reg" value="Register" [disabled]="!form.valid"  (click)="onSubmit()" type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
                                     <div class="register-link m-t-15 text-center">
                                         <p>Don't have account ? <a routerLink = "/Registration"> Sign Up Here</a></p>
                                     </div>

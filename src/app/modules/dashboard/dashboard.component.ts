@@ -17,6 +17,10 @@ declare var google: any;
 export class DashboardComponent implements OnInit {
   
   data: any;
+  chartdata: any;
+  sdk: any;
+  sdk1: any;
+  sdk2: any;
   dispname: any;
   value: any;
   DisplayBarChart: any;
@@ -30,6 +34,7 @@ export class DashboardComponent implements OnInit {
     columns?: Column[];
     options?: {};
   }[] = [];
+  datalength: number;
 
 
   constructor(private reportsService: ReportsService,private http: HttpClient) {
@@ -41,11 +46,15 @@ export class DashboardComponent implements OnInit {
     title1: 'Display Column Chart of Sales and Payment Collection',
     title2: 'Display Pie Chart of Due Payments and Payment Collection',
     title3: 'Display Line Chart of Due Payments and Payment Collection',
+    title4: 'Display Bar Chart of Payments Collection Month Wise',
+    title5: 'Display Bar Chart of Sales Collection Month Wise',
     type: ChartType.ColumnChart,
     type1: ChartType.PieChart,
-    type2: ChartType.LineChart  ,
+    type2: ChartType.LineChart,
+    type3: ChartType.Bar,
     data: [ ],
     columns: ['Element', 'Density'],
+    columns1: ['Month', 'sales', 'Payment'],
     options: {  
       isStacked:true,
       is3D:true,
@@ -72,6 +81,8 @@ export class DashboardComponent implements OnInit {
     }
   };
 
+  
+
 
   ngOnInit(): void {
 
@@ -79,6 +90,8 @@ export class DashboardComponent implements OnInit {
 
     this.DashboardChart();
 
+    this.GetChartDataSales();
+    
   }
 
   DashboardChart()
@@ -89,6 +102,33 @@ export class DashboardComponent implements OnInit {
    
       this.DisplayPieChart=[['Due Payments',(this.value[0].totalSales-this.value[0].totalPayCollection)],['Pay Collection',this.value[0].totalPayCollection]];
       //console.log(this.DisplayBarChart);
+    });
+  }
+
+  GetChartDataSales(){   
+    this.chartdata=this.reportsService.GetChartDetails().subscribe((data)=>{this.chartdata = data
+      this.datalength=this.chartdata.length;
+      var sdk1=[];
+      var sdk2=[];
+    if(this.chartdata != null && this.datalength >0){
+      for(var i=0;i<this.datalength;i++)
+      {
+        var sdk = [];
+        sdk.push(new Date(this.chartdata[i].monthAndYearDate));
+        sdk.push(this.chartdata[i].chartSales);
+        //sdk.push((this.chartdata[i].chartPayment))
+        sdk1.push(sdk);
+        var sdkin = [];
+        sdkin.push(new Date(this.chartdata[i].monthAndYearDate));
+        sdkin.push(this.chartdata[i].chartPayment);
+        //sdk.push((this.chartdata[i].chartSales))
+        sdk2.push(sdkin);
+      }
+    }    
+    this.sdk=sdk1;
+    this.sdk1=sdk2;
+    
+    console.log([this.sdk])     
     });
   }
 

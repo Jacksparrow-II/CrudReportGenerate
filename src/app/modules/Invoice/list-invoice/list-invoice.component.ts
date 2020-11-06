@@ -8,6 +8,7 @@ import { getLocaleDateTimeFormat } from '@angular/common';
 import * as moment from 'moment';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import * as XLSX from 'xlsx'; 
 
 
 declare var $;
@@ -33,6 +34,20 @@ export class ListInvoiceComponent implements OnInit {
   ngOnInit(): void {
     this.reloadData();
     this.gedDatafromsource();
+  }
+
+  fileName = 'List_of_Invoice.xlsx';
+
+  exportexcel()
+  { 
+     let element = document.getElementById('table_Invoice'); 
+     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+
+     const wb: XLSX.WorkBook = XLSX.utils.book_new();
+     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+     XLSX.writeFile(wb, this.fileName);
+    
   }
 
   reloadData() {
