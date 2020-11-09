@@ -40,6 +40,8 @@ constructor(public router: Router,private editprofileService: EditprofileService
   }
 
   onLogout() {
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('userId');
     localStorage.removeItem('token');
     this.router.navigate(['/Login']);
   }

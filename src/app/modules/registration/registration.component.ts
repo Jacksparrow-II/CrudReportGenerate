@@ -36,6 +36,8 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     //this.form = this.fb.group({
     //name: this.fb.array([])
+
+    this.Registration.gender = 'Male';
   }
 
   selectedRegions:any=[];

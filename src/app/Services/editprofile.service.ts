@@ -16,7 +16,9 @@ export class EditprofileService {
 
   ClearLocalStorage()
   {
-    localStorage.clear();
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('token');
     this.router.navigateByUrl('/Login');
     this.toastr.info("Please Login Again");
   }

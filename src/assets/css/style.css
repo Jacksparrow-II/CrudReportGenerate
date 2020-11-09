@@ -5523,7 +5523,6 @@ tbody tr td:last-child {
 }
 .login-form label {
   color: #455a64;
-  text-transform: uppercase;
 }
 .login-form label a {
   color: #4680ff;
