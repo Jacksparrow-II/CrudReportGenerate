@@ -41,7 +41,7 @@ export class PaymentService {
 
    AddPayment(Pay) {   
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
-    return this.http.post(environment.apiBaseURI + "/api/Payment/AddPaymentData", Pay, {headers :tokenHeader })
+    return this.http.post(environment.apiBaseURI + "/api/Payment/AddPayment", Pay, {headers :tokenHeader })
     .pipe(
       tap(
         succ => { },

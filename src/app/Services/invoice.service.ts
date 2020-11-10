@@ -41,7 +41,7 @@ export class InvoiceService {
 
   AddInvoice(Inv) {   
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
-    return this.http.post(environment.apiBaseURI + "/api/Invoice/AddInvoiceData", Inv, {headers :tokenHeader })
+    return this.http.post(environment.apiBaseURI + "/api/Invoice/AddInvoice", Inv, {headers :tokenHeader })
     .pipe(
       tap(
         succ => { },

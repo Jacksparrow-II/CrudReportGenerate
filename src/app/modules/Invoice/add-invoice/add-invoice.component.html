@@ -58,6 +58,9 @@
                                                     form.get('customerNo').touched && form.get('customerNo').invalid}">
                                                         <option *ngFor="let cust of Customer" [ngValue]="cust.customerNo" value="{{ cust.customerNo }}">{{cust.customerNo}}  &nbsp; ( {{cust.customerName}} )</option>
                                                     </select>
+                                                    <div class="invalid-feedback">
+                                                        <div>Input is required </div>
+                                                    </div>
                                                 </div>
                                             </div>
 

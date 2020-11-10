@@ -30,7 +30,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Email address</label>
+                                        <label>Email Address</label>
                                         <input type="email" id="userName" name="userName" class="form-control" placeholder="Email" formControlName="userName" [(ngModel)]="EdtPro1.userName" [ngClass]="{'is-invalid':
                                         form.get('userName').touched && form.get('userName').invalid}">
                                         <div *ngIf="form.get('userName').touched && form.get('userName').invalid" class="invalid-feedback">
@@ -40,7 +40,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>dob</label>
+                                        <label>Date of birth</label>
                                         <input type="date" id="dob" name="dob"  class="form-control" placeholder="dob" formControlName="dob" [(ngModel)]="EdtPro1.dob" [ngModel]="EdtPro1.dob  | date:'yyyy-MM-dd'" [ngClass]="{'is-invalid':
                                         form.get('dob').touched && form.get('dob').invalid}">
                                         <div *ngIf="form.get('dob').touched && form.get('dob').invalid" class="invalid-feedback">
@@ -67,14 +67,12 @@
                                     </div>
 
                                     <div>
-                                      <label>usertype</label>
+                                      <label>User Type</label>
                                       <select class="browser-default custom-select mb-4" name="usertype" [(ngModel)]="EdtPro1.usertype" formControlName="usertype" [ngClass]="{'is-invalid':
                                       form.get('usertype').touched && form.get('usertype').invalid}">
                                       <option disabled label="--select something --"></option>
                                       <option value="Admin">Admin</option>
-                                      <option value="SuperAdmin">SuperAdmin</option>
-                                      <option value="Commercial">Commercial</option>
-                                      <option value="Business">Business</option>
+                                      <option value="User">User</option>
                                       </select>
                                     </div>
 

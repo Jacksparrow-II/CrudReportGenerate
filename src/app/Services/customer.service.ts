@@ -40,7 +40,7 @@ export class CustomerService {
 
    AddCustomer(Cust:Cust) {   
     var tokenHeader = new HttpHeaders({'Authorization': 'Bearer '+ localStorage.getItem('token') })
-    return this.http.post(environment.apiBaseURI + "/api/Customer/AddCustomerData", Cust, {headers :tokenHeader })
+    return this.http.post(environment.apiBaseURI + "/api/Customer/AddCustomer", Cust, {headers :tokenHeader })
     .pipe(
       tap(
         succ => { },

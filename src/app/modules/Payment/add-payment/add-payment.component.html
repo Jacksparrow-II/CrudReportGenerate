@@ -50,6 +50,9 @@
                                                 form.get('invoiceNo').touched && form.get('invoiceNo').invalid}">
                                                     <option *ngFor="let dep of depList" [ngValue]="dep.invoiceNo">{{dep.invoiceNo}}</option>
                                                 </select>
+                                                <div class="invalid-feedback">
+                                                    <div>Input is required </div>
+                                                </div>
                                             </div>
                                         </div>
 

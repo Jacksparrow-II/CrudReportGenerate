@@ -29,7 +29,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Email address</label>
+                                        <label>Email Address</label>
                                         <input type="email" id="userName" name="userName" class="form-control" placeholder="Email" formControlName="userName" [(ngModel)]="Registration.userName" [ngClass]="{'is-invalid':
                                         form.get('userName').touched && form.get('userName').invalid}">
                                         <div *ngIf="form.get('userName').touched && form.get('userName').invalid" class="invalid-feedback">
@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>dob</label>
+                                        <label>Date of birth</label>
                                         <input type="date" id="dob" name="dob"  class="form-control" placeholder="dob" formControlName="dob" [(ngModel)]="Registration.dob" [ngClass]="{'is-invalid':
                                         form.get('dob').touched && form.get('dob').invalid}">
                                         <div *ngIf="form.get('dob').touched && form.get('dob').invalid" class="invalid-feedback">
@@ -81,9 +81,7 @@
                                       form.get('usertype').touched && form.get('usertype').invalid}">
                                       <option disabled label="Select something"></option>
                                       <option value="Admin">Admin</option>
-                                      <option value="SuperAdmin">SuperAdmin</option>
-                                      <option value="Commercial">Commercial</option>
-                                      <option value="Business">Business</option>
+                                      <option value="User">User</option>
                                       </select>
                                       <div *ngIf="form.get('usertype').touched && form.get('usertype').invalid" class="invalid-feedback">
                                         <div *ngIf="form.get('usertype').errors.required">Input is required </div>

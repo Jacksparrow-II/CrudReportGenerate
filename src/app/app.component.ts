@@ -12,19 +12,10 @@ export class AppComponent {
   dispname : any;
 
   constructor(public router: Router,public navbarService : NavbarService) {
-    
-//this.navbarService.Show();
-    //this.display();
+
+    // Disable Right click in Webpage
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
    }
-
-
-  // display() {
-  //   this.dispname = localStorage.getItem('firstName');
-  // }
-
-  // onLogout() {
-  //   localStorage.removeItem('token');
-  //   this.router.navigate(['/Login']);
-  // }
 
 }
